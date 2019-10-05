@@ -11,9 +11,15 @@
     <!-- Base application theme NoActionBar. -->
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/commonColor</item>
+        <item name="colorPrimaryDark">@color/md_blue_grey_800</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextAppearance.Widget.Event.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!--Any text styling can be done here-->
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
 </resources>
