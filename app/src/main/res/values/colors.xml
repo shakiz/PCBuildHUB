@@ -326,4 +326,5 @@
     <color name="detailsLayoutColor">#4E93C9</color>
     <color name="textColor">#776D6D</color>
     <color name="button_color">#5D5EB2</color>
+    <color name="commonColor">#5C64F7</color>
 </resources>

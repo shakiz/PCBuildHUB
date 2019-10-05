@@ -8,7 +8,7 @@
     android:background="@color/md_white_1000"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".MainActivity">
+    tools:context=".WelcomeHomeActivity">
 
 
     <LinearLayout
@@ -47,8 +47,8 @@
             android:layout_weight="2">
 
             <ImageView
-                android:layout_width="88dp"
-                android:layout_height="88dp"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
                 android:src="@drawable/logo"
                 android:tag="Drawbale"
                 android:layout_gravity="center"/>
@@ -71,6 +71,7 @@
                 android:text="@string/sign_up"
                 android:textSize="32sp"
                 android:textStyle="bold"
+                android:textColor="@color/md_blue_grey_800"
                 android:layout_gravity="center"
                 android:gravity="center"/>
 
@@ -90,16 +91,56 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_gravity="center"
+            android:weightSum="2"
             android:gravity="center"
             android:layout_weight="1">
 
             <Button
+                android:id="@+id/startWithMobile"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight=".6"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:textAllCaps="false"
-                android:text="@string/sign_up_with_mobile"/>
+                android:stateListAnimator="@null"
+                android:elevation="4dp"
+                android:translationZ="4dp"
+                android:padding="2dp"
+                android:clickable="true"
+                android:textColor="@color/md_white_1000"
+                android:background="@drawable/button_shape_round_corner"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/start_with_mobile"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight=".35"
+                android:text="@string/or"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="4dp"
+                android:textColor="@color/md_blue_grey_800"/>
+
+            <Button
+                android:id="@+id/startWithEmail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".6"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="2dp"
+                android:textAllCaps="false"
+                android:stateListAnimator="@null"
+                android:elevation="4dp"
+                android:translationZ="4dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:textColor="@color/md_white_1000"
+                android:background="@drawable/button_shape_round_corner"
+                android:text="@string/start_with_email"/>
 
         </LinearLayout>
 
@@ -118,6 +159,7 @@
                 android:layout_weight=".65"
                 android:layout_gravity="center|right"
                 android:gravity="center|right"
+                android:clickable="false"
                 android:text="@string/already_have_account"
                 android:textSize="18sp"/>
 
@@ -127,7 +169,11 @@
                 android:layout_weight=".35"
                 android:layout_marginLeft="4dp"
                 android:layout_gravity="center|left"
+                android:id="@+id/login"
                 android:gravity="center|left"
+                android:textColor="@color/commonColor"
+                android:clickable="true"
+                android:textStyle="bold"
                 android:text="@string/login"
                 android:textSize="18sp"/>
 
