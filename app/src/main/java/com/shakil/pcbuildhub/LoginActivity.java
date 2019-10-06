@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
     private TextView forgotPasswordTextView;
+    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +21,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         init();
+        Animation a = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        linearLayout.startAnimation(a);
         bindUIWithComponents();
     }
 
@@ -31,5 +37,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void init() {
         forgotPasswordTextView = findViewById(R.id.forgotPassword);
+        linearLayout = findViewById(R.id.mainLayout);
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(LoginActivity.this,WelcomeHomeActivity.class));
+        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
     }
 }
