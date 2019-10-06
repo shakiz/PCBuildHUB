@@ -23,4 +23,8 @@
     <string name="verification">Verification</string>
     <string name="verification_code_text">Enter the verification code just sent on your email address.</string>
     <string name="verify">Verify</string>
+    <string name="accept_terms">I accept the policy and terms</string>
+    <string name="username">Username</string>
+    <string name="username_hint">Enter Username</string>
+    <string name="hello">Hello</string>
 </resources>
