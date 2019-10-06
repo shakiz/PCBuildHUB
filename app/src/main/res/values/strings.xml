@@ -20,4 +20,7 @@
     <string name="associated_email">Enter associated email address with your account</string>
     <string name="send">Send</string>
     <string name="forgot_password_email">We will email you a link to reset your password</string>
+    <string name="verification">Verification</string>
+    <string name="verification_code_text">Enter the verification code just sent on your email address.</string>
+    <string name="verify">Verify</string>
 </resources>

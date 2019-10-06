@@ -156,6 +156,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
                 android:layout_weight=".65"
                 android:layout_gravity="center|right"
                 android:gravity="center|right"
@@ -166,6 +167,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
                 android:layout_weight=".35"
                 android:layout_marginLeft="4dp"
                 android:layout_gravity="center|left"
