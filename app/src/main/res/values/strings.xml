@@ -17,4 +17,7 @@
     <string name="password_hint">Enter Password</string>
     <string name="remember_me">Remember Me</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="associated_email">Enter associated email address with your account</string>
+    <string name="send">Send</string>
+    <string name="forgot_password_email">We will email you a link to reset your password</string>
 </resources>
