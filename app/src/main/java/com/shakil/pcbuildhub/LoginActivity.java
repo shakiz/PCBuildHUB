@@ -1,15 +1,15 @@
 package com.shakil.pcbuildhub;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
+    private TextView forgotPasswordTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +17,19 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         init();
-        setSupportActionBar(toolbar);
+        bindUIWithComponents();
+    }
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+    private void bindUIWithComponents() {
+        forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, WelcomeHomeActivity.class));
+                //startActivity(new Intent(LoginActivity.this,ForgotPasswordActivity.class));
             }
         });
     }
 
     private void init() {
-        toolbar = findViewById(R.id.tool_bar);
+        forgotPasswordTextView = findViewById(R.id.forgotPassword);
     }
 }
