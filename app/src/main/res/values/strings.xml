@@ -3,7 +3,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="Easier_sign_up">Its easier to sign up</string>
     <string name="start_with_mobile">Start With Mobile Number</string>
-    <string name="start_with_email">Start With Email</string>
+    <string name="start_with_email">Lets get started with email</string>
     <string name="already_have_account">Already have account?</string>
     <string name="login">
         <u>Login</u>
@@ -31,4 +31,5 @@
     <string name="mobile_number_hint">Enter Mobile Number</string>
     <string name="start">Start</string>
     <string name="easier_start_mobile">Its always easier and secure to start with just mobile number</string>
+    <string name="email_moto">We just need your email address to start your journey with us</string>
 </resources>

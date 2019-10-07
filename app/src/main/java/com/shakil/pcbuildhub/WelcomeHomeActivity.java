@@ -49,5 +49,12 @@ public class WelcomeHomeActivity extends AppCompatActivity {
                 startActivity(new Intent(WelcomeHomeActivity.this,StartWithMobileActivity.class));
             }
         });
+
+        startWithEmailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WelcomeHomeActivity.this,StartWithEmailActivity.class));
+            }
+        });
     }
 }
