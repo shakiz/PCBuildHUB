@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub;
+package com.shakil.pcbuildhub.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.shakil.pcbuildhub.R;
 
 public class LoginActivity extends AppCompatActivity {
 

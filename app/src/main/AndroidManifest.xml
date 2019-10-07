@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-
-        <activity android:name=".WelcomeHomeActivity">
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".onboard.WelcomeHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,35 +18,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".onboard.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".onboard.ForgotPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".onboard.SignUpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".PasswordResetVerificationActivity"
+            android:name=".onboard.PasswordResetVerificationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".StartWithMobileActivity"
+            android:name=".onboard.StartWithMobileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".StartWithEmailActivity"
+            android:name=".onboard.StartWithEmailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
-            android:windowSoftInputMode="adjustNothing"/>
+            android:windowSoftInputMode="adjustNothing" />
     </application>
 
 </manifest>

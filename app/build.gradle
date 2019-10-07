@@ -36,9 +36,10 @@ dependencies {
     implementation 'com.github.zcweng:switch-button:0.0.3@aar'
     // android pinView
     implementation 'com.chaos.view:pinview:1.4.3'
-
     // custom progress library
     implementation 'com.roger.catloadinglibrary:catloadinglibrary:1.0.4'
+    // android custom menu
+    implementation "com.github.skydoves:powermenu:2.1.2"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'

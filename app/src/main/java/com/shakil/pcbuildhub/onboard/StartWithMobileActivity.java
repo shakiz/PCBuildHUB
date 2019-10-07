@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub;
+package com.shakil.pcbuildhub.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.roger.catloadinglibrary.CatLoadingView;
+import com.shakil.pcbuildhub.HomeActivity;
+import com.shakil.pcbuildhub.R;
 
 public class StartWithMobileActivity extends AppCompatActivity {
 
@@ -40,6 +42,8 @@ public class StartWithMobileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mView.show(getSupportFragmentManager(), "");
+                mView.dismiss();
+                startActivity(new Intent(StartWithMobileActivity.this, HomeActivity.class));
             }
         });
     }

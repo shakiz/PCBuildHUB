@@ -1,24 +1,31 @@
-package com.shakil.pcbuildhub;
+package com.shakil.pcbuildhub.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-public class ForgotPasswordActivity extends AppCompatActivity {
+import com.roger.catloadinglibrary.CatLoadingView;
+import com.shakil.pcbuildhub.HomeActivity;
+import com.shakil.pcbuildhub.R;
+
+public class StartWithEmailActivity extends AppCompatActivity {
 
     private LinearLayout linearLayout;
-    private Button send;
+    private Button startBtn;
+    private CatLoadingView mView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot_password);
+        setContentView(R.layout.activity_start_with_email);
 
         init();
         Animation a = AnimationUtils.loadAnimation(this, R.anim.fadein);
@@ -28,21 +35,24 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     private void init() {
         linearLayout = findViewById(R.id.mainLayout);
-        send = findViewById(R.id.send);
+        startBtn = findViewById(R.id.start);
+        mView = new CatLoadingView();
     }
 
     private void bindUIWIthComponents(){
-        send.setOnClickListener(new View.OnClickListener() {
+        startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ForgotPasswordActivity.this,PasswordResetVerificationActivity.class));
+                mView.show(getSupportFragmentManager(), "");
+                mView.dismiss();
+                startActivity(new Intent(StartWithEmailActivity.this, HomeActivity.class));
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(ForgotPasswordActivity.this,LoginActivity.class));
+        startActivity(new Intent(StartWithEmailActivity.this,WelcomeHomeActivity.class));
         overridePendingTransition(R.anim.fadein,R.anim.fadeout);
     }
 }
