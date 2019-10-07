@@ -5,7 +5,7 @@ android {
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.shakil.pcbuildhub"
-        minSdkVersion 19 // 4.4
+        minSdkVersion 21// 5.0
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -39,7 +39,7 @@ dependencies {
     // custom progress library
     implementation 'com.roger.catloadinglibrary:catloadinglibrary:1.0.4'
     // android custom menu
-    implementation "com.github.skydoves:powermenu:2.1.2"
+    implementation 'com.yarolegovich:sliding-root-nav:1.1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
