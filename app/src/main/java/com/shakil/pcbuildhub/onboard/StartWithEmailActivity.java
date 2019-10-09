@@ -2,10 +2,10 @@ package com.shakil.pcbuildhub.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -43,9 +43,11 @@ public class StartWithEmailActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mView.show(getSupportFragmentManager(), "");
-                mView.dismiss();
-                startActivity(new Intent(StartWithEmailActivity.this, HomeActivity.class));
+                mView.setCanceledOnTouchOutside(true);
+
+
             }
         });
     }

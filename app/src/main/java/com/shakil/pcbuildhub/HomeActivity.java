@@ -1,22 +1,25 @@
 package com.shakil.pcbuildhub;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
 import com.shakil.pcbuildhub.drawerextra.SpaceItem;
+import com.shakil.pcbuildhub.onboard.StartWithMobileActivity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 import java.util.Arrays;
@@ -27,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView list;
     private DrawerAdapter adapter;
+    private LinearLayout linearLayout;
 
     private static final int POS_PROFILE = 0;
     private static final int POS_ADD_CONFIG = 1;
@@ -49,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void init(Bundle savedInstanceState){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        linearLayout = findViewById(R.id.activity_main);
         toolbar.setTitle(R.string.home);
         slidingRootNav  = new SlidingRootNavBuilder(this)
                 .withToolbarMenuToggle(toolbar)
@@ -98,6 +103,12 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(HomeActivity.this, StartWithMobileActivity.class));
+        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
     }
 
     private void showFragment(Fragment fragment) {
