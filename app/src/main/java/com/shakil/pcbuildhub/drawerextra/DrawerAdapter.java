@@ -1,33 +1,24 @@
-package com.shakil.pcbuildhub;
-
+package com.shakil.pcbuildhub.drawerextra;
 
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-/**
- * Created by yarolegovich on 25.03.2017.
- */
 
 public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder> {
 
     private List<DrawerItem> items;
     private Map<Class<? extends DrawerItem>, Integer> viewTypes;
     private SparseArray<DrawerItem> holderFactories;
-
     private OnItemSelectedListener listener;
 
     public DrawerAdapter(List<DrawerItem> items) {
         this.items = items;
         this.viewTypes = new HashMap<>();
         this.holderFactories = new SparseArray<>();
-
         processViewTypes();
     }
 

@@ -2,21 +2,19 @@
 <resources>
 
     <string-array name="ld_activityScreenTitles">
-        <item>Dashboard</item>
-        <item>My Account</item>
-        <item>Messages</item>
-        <item>Cart</item>
-        <item />
+        <item>Profile</item>
+        <item>Add Config</item>
+        <item>Build Your PC</item>
+        <item>About US</item>
         <item>Log Out</item>
     </string-array>
 
     <array name="ld_activityScreenIcons">
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
-        <item>@drawable/ic_launcher_background</item>
-        <item>0</item>
-        <item>@drawable/ic_launcher_background</item>
+        <item>@drawable/man</item>
+        <item>@drawable/add</item>
+        <item>@drawable/idea</item>
+        <item>@drawable/question</item>
+        <item>@drawable/logout</item>
     </array>
 
 </resources>

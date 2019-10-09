@@ -1,12 +1,8 @@
-package com.shakil.pcbuildhub;
+package com.shakil.pcbuildhub.drawerextra;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-
-/**
- * Created by yarolegovich on 25.03.2017.
- */
 
 public class SpaceItem extends DrawerItem<SpaceItem.ViewHolder> {
 

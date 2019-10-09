@@ -32,4 +32,6 @@
     <string name="start">Start</string>
     <string name="easier_start_mobile">Its always easier and secure to start with just mobile number</string>
     <string name="email_moto">We just need your email address to start your journey with us</string>
+    <string name="itemname">Item name</string>
+    <string name="home">Home</string>
 </resources>

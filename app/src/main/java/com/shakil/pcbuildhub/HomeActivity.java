@@ -1,33 +1,38 @@
 package com.shakil.pcbuildhub;
 
-import androidx.annotation.ColorInt;
-import androidx.annotation.ColorRes;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-
+import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
+import com.shakil.pcbuildhub.drawerextra.DrawerItem;
+import com.shakil.pcbuildhub.drawerextra.SimpleItem;
+import com.shakil.pcbuildhub.drawerextra.SpaceItem;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
-
 import java.util.Arrays;
 
 public class HomeActivity extends AppCompatActivity {
 
-    SlidingRootNav slidingRootNav ;
-    Toolbar toolbar;
+    private SlidingRootNav slidingRootNav ;
+    private Toolbar toolbar;
+    private RecyclerView list;
+    private DrawerAdapter adapter;
 
-    private static final int POS_DASHBOARD = 0;
-    private static final int POS_ACCOUNT = 1;
-    private static final int POS_MESSAGES = 2;
-    private static final int POS_CART = 3;
-    private static final int POS_LOGOUT = 5;
+    private static final int POS_PROFILE = 0;
+    private static final int POS_ADD_CONFIG = 1;
+    private static final int POS_BUILD_YOUR_PC = 2;
+    private static final int POS_ABOUT_US = 3;
+    private static final int POS_LOGOUT = 4;
 
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -37,26 +42,29 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        toolbar = findViewById(R.id.toolbar);
+        init(savedInstanceState);
+        bindUIWithComponents();
 
+    }
+
+    private void init(Bundle savedInstanceState){
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.home);
         slidingRootNav  = new SlidingRootNavBuilder(this)
                 .withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
-                .withContentClickableWhenMenuOpened(false)
+                .withContentClickableWhenMenuOpened(true)
                 .withSavedState(savedInstanceState)
                 .withMenuLayout(R.layout.menu)
                 .inject();
 
         screenIcons = loadScreenIcons();
         screenTitles = loadScreenTitles();
+    }
 
-        DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
-                createItemFor(POS_DASHBOARD).setChecked(true),
-                createItemFor(POS_ACCOUNT),
-                createItemFor(POS_MESSAGES),
-                createItemFor(POS_CART),
-                new SpaceItem(48),
-                createItemFor(POS_LOGOUT)));
+    private void bindUIWithComponents(){
+
+        setAdapter();
         adapter.setListener(new DrawerAdapter.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int position) {
@@ -68,13 +76,28 @@ public class HomeActivity extends AppCompatActivity {
 //        showFragment(selectedScreen);
             }
         });
+    }
 
-        RecyclerView list = findViewById(R.id.list);
+    private void setAdapter() {
+        list = findViewById(R.id.list);
+        adapter = new DrawerAdapter(Arrays.asList(
+                createItemFor(POS_PROFILE).setChecked(true),
+                createItemFor(POS_ADD_CONFIG),
+                createItemFor(POS_BUILD_YOUR_PC),
+                createItemFor(POS_ABOUT_US),
+                new SpaceItem(32),
+                createItemFor(POS_LOGOUT)));
+
         list.setNestedScrollingEnabled(false);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
 
-        adapter.setSelected(POS_DASHBOARD);
+        adapter.setSelected(POS_PROFILE);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 
     private void showFragment(Fragment fragment) {
@@ -85,10 +108,8 @@ public class HomeActivity extends AppCompatActivity {
 
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
-                .withIconTint(color(R.color.md_white_1000))
-                .withTextTint(color(R.color.md_white_1000))
-                .withSelectedIconTint(color(R.color.colorAccent))
-                .withSelectedTextTint(color(R.color.colorAccent));
+                .withTextTint(getResources().getColor(R.color.md_blue_grey_700))
+                .withSelectedTextTint(getResources().getColor(R.color.md_grey_900));
     }
 
     private String[] loadScreenTitles() {
@@ -108,8 +129,4 @@ public class HomeActivity extends AppCompatActivity {
         return icons;
     }
 
-    @ColorInt
-    private int color(@ColorRes int res) {
-        return ContextCompat.getColor(this, res);
-    }
 }
