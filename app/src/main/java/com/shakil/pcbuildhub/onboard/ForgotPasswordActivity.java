@@ -45,6 +45,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(ForgotPasswordActivity.this,LoginActivity.class));
-        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+        overridePendingTransition(R.anim.fadein,R.anim.push_up_out);
     }
 }

@@ -108,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(HomeActivity.this, StartWithMobileActivity.class));
-        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+        overridePendingTransition(R.anim.fadein,R.anim.push_up_out);
     }
 
     private void showFragment(Fragment fragment) {

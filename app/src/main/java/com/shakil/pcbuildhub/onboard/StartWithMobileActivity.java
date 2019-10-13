@@ -1,7 +1,6 @@
 package com.shakil.pcbuildhub.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import com.roger.catloadinglibrary.CatLoadingView;
 import com.shakil.pcbuildhub.HomeActivity;
 import com.shakil.pcbuildhub.R;
@@ -41,9 +39,7 @@ public class StartWithMobileActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mView.show(getSupportFragmentManager(), "");
-                mView.dismiss();
-                startActivity(new Intent(StartWithMobileActivity.this, HomeActivity.class));
+               showCustomDialog();
             }
         });
     }
@@ -51,6 +47,12 @@ public class StartWithMobileActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(StartWithMobileActivity.this,WelcomeHomeActivity.class));
-        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+        overridePendingTransition(R.anim.fadein,R.anim.push_up_out);
+    }
+
+    public void showCustomDialog() {
+        mView.show(getSupportFragmentManager(), "");
+        mView.setCanceledOnTouchOutside(true);
+        if (!mView.isVisible()) startActivity(new Intent(StartWithMobileActivity.this,HomeActivity.class));
     }
 }

@@ -35,6 +35,6 @@ public class PasswordResetVerificationActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(PasswordResetVerificationActivity.this,ForgotPasswordActivity.class));
-        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+        overridePendingTransition(R.anim.fadein,R.anim.push_up_out);
     }
 }
