@@ -40,4 +40,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="specialization">Gaming Build</string>
+    <string name="badge">Amature</string>
+    <string name="no_of_posts">Total Posts</string>
+    <string name="posts">12</string>
+    <string name="total_likes">Total Likes</string>
+    <string name="likes">154</string>
 </resources>

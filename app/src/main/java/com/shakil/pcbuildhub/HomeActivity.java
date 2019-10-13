@@ -18,6 +18,7 @@ import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
 import com.shakil.pcbuildhub.drawerextra.SpaceItem;
 import com.shakil.pcbuildhub.fragments.FragmentPostDashboard;
+import com.shakil.pcbuildhub.fragments.FragmentProfile;
 import com.shakil.pcbuildhub.onboard.StartWithMobileActivity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
@@ -76,9 +77,13 @@ public class HomeActivity extends AppCompatActivity {
                 if (position == POS_LOGOUT) {
                     finish();
                 }
+                else if (position == POS_PROFILE){
+                    showFragment(new FragmentProfile());
+                }
+                else if (position == POS_POST){
+                    showFragment(new FragmentPostDashboard());
+                }
                 slidingRootNav.closeMenu();
-//        Fragment selectedScreen = CenteredTextFragment.createFor(screenTitles[position]);
-//        showFragment(selectedScreen);
             }
         });
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
@@ -116,9 +121,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void showFragment(Fragment fragment) {
-//        getFragmentManager().beginTransaction()
-//                .replace(R.id.container, fragment)
-//                .commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
     }
 
     private DrawerItem createItemFor(int position) {

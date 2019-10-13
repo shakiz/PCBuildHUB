@@ -2,6 +2,7 @@ package com.shakil.pcbuildhub.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -11,7 +12,6 @@ import android.view.ViewGroup;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.DashboardPostAdapter;
 import com.shakil.pcbuildhub.model.PostModel;
-
 import java.util.ArrayList;
 
 public class FragmentPostDashboard extends Fragment {
@@ -36,7 +36,7 @@ public class FragmentPostDashboard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_fragment_post_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_post_dashboard, container, false);
         init(view);
         return view;
     }
