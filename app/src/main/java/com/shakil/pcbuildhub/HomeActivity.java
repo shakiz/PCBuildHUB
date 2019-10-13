@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
@@ -11,14 +12,12 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
-
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
 import com.shakil.pcbuildhub.drawerextra.SpaceItem;
+import com.shakil.pcbuildhub.fragments.FragmentPostDashboard;
 import com.shakil.pcbuildhub.onboard.StartWithMobileActivity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
@@ -32,11 +31,12 @@ public class HomeActivity extends AppCompatActivity {
     private DrawerAdapter adapter;
     private LinearLayout linearLayout;
 
-    private static final int POS_PROFILE = 0;
-    private static final int POS_ADD_CONFIG = 1;
-    private static final int POS_BUILD_YOUR_PC = 2;
-    private static final int POS_ABOUT_US = 3;
-    private static final int POS_LOGOUT = 4;
+    private static final int POS_POST = 0;
+    private static final int POS_PROFILE = 1;
+    private static final int POS_ADD_CONFIG = 2;
+    private static final int POS_BUILD_YOUR_PC = 3;
+    private static final int POS_ABOUT_US = 4;
+    private static final int POS_LOGOUT = 5;
 
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -81,12 +81,16 @@ public class HomeActivity extends AppCompatActivity {
 //        showFragment(selectedScreen);
             }
         });
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container,new FragmentPostDashboard());
+        fragmentTransaction.commit();
     }
 
     private void setAdapter() {
         list = findViewById(R.id.list);
         adapter = new DrawerAdapter(Arrays.asList(
-                createItemFor(POS_PROFILE).setChecked(true),
+                createItemFor(POS_POST).setChecked(true),
+                createItemFor(POS_PROFILE),
                 createItemFor(POS_ADD_CONFIG),
                 createItemFor(POS_BUILD_YOUR_PC),
                 createItemFor(POS_ABOUT_US),
@@ -97,7 +101,7 @@ public class HomeActivity extends AppCompatActivity {
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
 
-        adapter.setSelected(POS_PROFILE);
+        adapter.setSelected(POS_POST);
     }
 
     @Override

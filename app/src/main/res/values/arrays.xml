@@ -2,6 +2,7 @@
 <resources>
 
     <string-array name="ld_activityScreenTitles">
+        <item>Home</item>
         <item>Profile</item>
         <item>Add Config</item>
         <item>Build Your PC</item>
@@ -10,6 +11,7 @@
     </string-array>
 
     <array name="ld_activityScreenIcons">
+        <item>@drawable/homeicon</item>
         <item>@drawable/man</item>
         <item>@drawable/add</item>
         <item>@drawable/idea</item>
