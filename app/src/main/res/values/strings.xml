@@ -48,4 +48,7 @@
     <string name="likes">154</string>
     <string name="post_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.</string>
+    <string name="welcome">Welcome</string>
+    <string name="splash_screen_moto">We are so glad you are here</string>
+    <string name="lets_go">Lets Go</string>
 </resources>
