@@ -46,4 +46,6 @@
     <string name="posts">12</string>
     <string name="total_likes">Total Likes</string>
     <string name="likes">154</string>
+    <string name="post_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.</string>
 </resources>

@@ -6,155 +6,515 @@
     android:layout_height="match_parent"
     android:id="@+id/mainLayout"
     android:orientation="vertical"
-    android:weightSum="2"
-    android:background="@color/md_blue_grey_600">
+    android:background="@color/md_white_1000">
 
-
-    <com.google.android.material.card.MaterialCardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".8"
-        android:background="@color/md_white_1000"
-        app:cardCornerRadius="16dp"
-        app:cardUseCompatPadding="true"
-        app:elevation="16dp">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:paddingBottom="4dp">
 
-        <!--Profile image , location and total earning part-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="8dp"
-            android:weightSum="5"
-            android:id="@+id/userDetailsLayout"
-            android:gravity="center">
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="vertical">
 
-            <!--Profile ImageView-->
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:src="@drawable/user"
-                app:civ_border_width="2dp"
-                android:layout_margin="4dp"
-                app:civ_border_color="#FFffffff"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/md_blue_grey_600"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:elevation="16dp">
 
-            <!--Name-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="@string/username"
-                android:layout_marginTop="4dp"
-                android:id="@+id/Name"
-                android:textSize="14sp"
-                android:padding="2dp"/>
-
-            <!--Name-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="@string/specialization"
-                android:id="@+id/Specialist"
-                android:textSize="14sp"
-                android:padding="2dp"/>
-
-            <!--Location-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_badge"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/badge"
-                    android:id="@+id/Location"
-                    android:textSize="14sp"
-                    android:padding="2dp"/>
-
-            </LinearLayout>
-
-            <!--Number of bid , ongoing work and total earnings details-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1.5"
-                android:layout_marginTop="4dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <!--Number of bid-->
+                <!--Profile image , location and total earning part-->
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:weightSum="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_margin="4dp"
+                    android:weightSum="5.25"
+                    android:id="@+id/userDetailsLayout"
+                    android:gravity="center">
 
+                    <!--Profile ImageView-->
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/user"
+                        app:civ_border_width="2dp"
+                        android:layout_margin="4dp"
+                        app:civ_border_color="#FFffffff"/>
+
+                    <!--Name-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight=".5"
-                        android:text="@string/no_of_posts"
-                        android:textStyle="bold"
-                        android:id="@+id/NumberOfBids"
-                        android:textSize="14sp"/>
+                        android:layout_weight="1"
+                        android:text="@string/username"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/Name"
+                        android:textColor="@color/md_white_1000"
+                        android:textSize="14sp"
+                        android:padding="2dp"/>
 
+                    <!--Name-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight=".5"
-                        android:text="@string/posts"
-                        android:textSize="14sp"/>
+                        android:layout_weight="1.25"
+                        android:text="@string/specialization"
+                        android:id="@+id/Specialist"
+                        android:textColor="@color/md_white_1000"
+                        android:textSize="14sp"
+                        android:padding="2dp"/>
+
+                    <!--Location-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.25"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_badge"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/badge"
+                            android:id="@+id/Location"
+                            android:textColor="@color/md_white_1000"
+                            android:textSize="14sp"
+                            android:padding="2dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:weightSum="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight=".5"
+                                android:text="@string/no_of_posts"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_white_1000"
+                                android:id="@+id/NumberOfBids"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight=".5"
+                                android:textColor="@color/md_white_1000"
+                                android:text="@string/posts"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="12dp"
+                            android:weightSum="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight=".5"
+                                android:text="@string/total_likes"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_white_1000"
+                                android:id="@+id/PendingJobs"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight=".5"
+                                android:textColor="@color/md_white_1000"
+                                android:text="@string/likes"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <!--Number of pending_jobs-->
-                <LinearLayout
-                    android:layout_width="wrap_content"
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:weightSum="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp">
+
+                    <View
+                        android:id="@+id/label1"
+                        android:layout_width="8dp"
+                        android:layout_height="32dp"
+                        android:background="@color/md_blue_grey_600" />
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight=".5"
-                        android:text="@string/total_likes"
-                        android:textStyle="bold"
-                        android:id="@+id/PendingJobs"
-                        android:textSize="14sp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/label1"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_toEndOf="@+id/label1"
+                        android:layout_toRightOf="@+id/label1"
+                        android:text="Recent Posts"
+                        android:textColor="@color/md_blue_grey_600"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight=".5"
-                        android:text="@string/likes"
-                        android:textSize="14sp"/>
+                </RelativeLayout>
 
-                </LinearLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/md_grey_200"
+                    android:elevation="4dp"
+                    android:id="@+id/postCardView1">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical">
+
+
+                        <!--Post heading section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="3"
+                            android:orientation="horizontal">
+
+                            <com.github.florent37.shapeofview.shapes.CircleView
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/user"/>
+
+                            </com.github.florent37.shapeofview.shapes.CircleView>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/username"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/md_blue_grey_800"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/date"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/md_blue_grey_800"/>
+
+                            </LinearLayout>
+
+                            <com.github.florent37.shapeofview.shapes.CircleView
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="18dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_arrow_down"/>
+
+                            </com.github.florent37.shapeofview.shapes.CircleView>
+
+                        </LinearLayout>
+
+                        <!--Post description section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/post_description"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+                        <!--Post short details section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal"
+                            android:gravity="right"
+                            android:layout_gravity="right">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@drawable/ic_heart"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:text="@string/likes"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@drawable/ic_share"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:text="@string/likes"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/md_grey_200"
+                    android:elevation="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:id="@+id/postCardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical">
+
+
+                        <!--Post heading section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="3"
+                            android:orientation="horizontal">
+
+                            <com.github.florent37.shapeofview.shapes.CircleView
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/user"/>
+
+                            </com.github.florent37.shapeofview.shapes.CircleView>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/username"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/md_blue_grey_800"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/date"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/md_blue_grey_800"/>
+
+                            </LinearLayout>
+
+                            <com.github.florent37.shapeofview.shapes.CircleView
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="18dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_arrow_down"/>
+
+                            </com.github.florent37.shapeofview.shapes.CircleView>
+
+                        </LinearLayout>
+
+                        <!--Post description section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/post_description"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+                        <!--Post short details section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal"
+                            android:gravity="right"
+                            android:layout_gravity="right">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@drawable/ic_heart"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:text="@string/likes"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@drawable/ic_share"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:text="@string/likes"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
+
+
 
         </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-
+    </ScrollView>
 
 
 
