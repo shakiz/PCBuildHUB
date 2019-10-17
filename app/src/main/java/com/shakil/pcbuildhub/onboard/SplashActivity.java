@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
+import android.widget.LinearLayout;
 import com.shakil.pcbuildhub.R;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private LinearLayout linearLayout;
     private ImageView nextPage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,8 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         init();
+        Animation a = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        linearLayout.startAnimation(a);
         bindUIWithComponents();
     }
 
@@ -31,6 +36,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void init() {
+        linearLayout = findViewById(R.id.mainLayout);
         nextPage = findViewById(R.id.nextPage);
     }
 }

@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/md_white_1000">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/app_bar"
@@ -34,7 +34,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_margin="4dp"
-                    android:weightSum="5.25"
                     android:id="@+id/userDetailsLayout"
                     android:gravity="center">
 
@@ -51,8 +50,7 @@
                     <!--Name-->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:text="@string/username"
                         android:layout_marginTop="4dp"
                         android:id="@+id/Name"
@@ -63,8 +61,7 @@
                     <!--Name-->
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1.25"
+                        android:layout_height="wrap_content"
                         android:text="@string/specialization"
                         android:id="@+id/Specialist"
                         android:textColor="@color/md_white_1000"
@@ -96,8 +93,7 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_marginBottom="4dp"
                         android:layout_gravity="center"
@@ -514,7 +510,7 @@
 
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 
