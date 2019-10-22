@@ -300,7 +300,6 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
                     android:textColor="@color/md_white_1000"
                     android:textAllCaps="false"
                     android:textSize="18sp"
