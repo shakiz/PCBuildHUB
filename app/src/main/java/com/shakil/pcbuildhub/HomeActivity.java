@@ -11,12 +11,14 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
 import com.shakil.pcbuildhub.drawerextra.SpaceItem;
+import com.shakil.pcbuildhub.fragments.FragmentAddConfig;
 import com.shakil.pcbuildhub.fragments.FragmentPostDashboard;
 import com.shakil.pcbuildhub.fragments.FragmentProfile;
 import com.shakil.pcbuildhub.onboard.StartWithMobileActivity;
@@ -74,16 +76,31 @@ public class HomeActivity extends AppCompatActivity {
         adapter.setListener(new DrawerAdapter.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int position) {
-                if (position == POS_LOGOUT) {
-                    finish();
-                }
-                else if (position == POS_PROFILE){
-                    showFragment(new FragmentProfile());
-                }
-                else if (position == POS_POST){
-                    showFragment(new FragmentPostDashboard());
-                }
+                final int pos = position;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (pos == POS_LOGOUT) {
+                            finish();
+                            return;
+                        }
+                        else if (pos == POS_PROFILE){
+                            showFragment(FragmentProfile.getInstance());
+                            return;
+                        }
+                        else if (pos == POS_POST){
+                            showFragment(FragmentPostDashboard.getInstance());
+                            return;
+                        }
+                        else if (pos == POS_ADD_CONFIG){
+                            showFragment(FragmentAddConfig.getInstance());
+                            return;
+                        }
+                    }
+                },5);
+
                 slidingRootNav.closeMenu();
+
             }
         });
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
@@ -121,8 +138,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void showFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, fragment)
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.fadein,R.anim.fadeout);
+        fragmentTransaction.replace(R.id.container, fragment)
                 .commit();
     }
 

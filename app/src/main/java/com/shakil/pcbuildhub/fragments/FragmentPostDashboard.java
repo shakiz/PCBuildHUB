@@ -22,6 +22,13 @@ public class FragmentPostDashboard extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private Context context;
 
+    private static final FragmentPostDashboard FRAGMENT_POST_DASHBOARD = null;
+
+    public static synchronized FragmentPostDashboard getInstance(){
+        if (FRAGMENT_POST_DASHBOARD == null) return new FragmentPostDashboard();
+        else return FRAGMENT_POST_DASHBOARD;
+    }
+
     public FragmentPostDashboard() {
         // Required empty public constructor
     }

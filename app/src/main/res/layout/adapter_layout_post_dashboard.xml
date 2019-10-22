@@ -12,7 +12,9 @@
         android:id="@+id/adapter_cardview"
         android:elevation="10dp"
         app:cardCornerRadius="8dp"
+        android:clickable="true"
         android:layout_margin="8dp"
+        android:foreground="?attr/selectableItemBackground"
         app:cardBackgroundColor="@color/md_white_1000">
 
         <LinearLayout

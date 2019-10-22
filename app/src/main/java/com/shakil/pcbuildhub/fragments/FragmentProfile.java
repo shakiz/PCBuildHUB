@@ -15,6 +15,12 @@ import com.shakil.pcbuildhub.R;
  */
 public class FragmentProfile extends Fragment {
 
+    private static final FragmentProfile FRAGMENT_PROFILE = null;
+
+    public static synchronized FragmentProfile getInstance(){
+        if (FRAGMENT_PROFILE == null) return new FragmentProfile();
+        else return FRAGMENT_PROFILE;
+    }
 
     public FragmentProfile() {
         // Required empty public constructor

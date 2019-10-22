@@ -9,6 +9,13 @@ import com.shakil.pcbuildhub.R;
 
 public class FragmentAddConfig extends Fragment {
 
+    private static final FragmentAddConfig FRAGMENT_ADD_CONFIG = null;
+
+    public static synchronized FragmentAddConfig getInstance(){
+        if (FRAGMENT_ADD_CONFIG == null) return new FragmentAddConfig();
+        else return FRAGMENT_ADD_CONFIG;
+    }
+
     public FragmentAddConfig() {
         
     }
