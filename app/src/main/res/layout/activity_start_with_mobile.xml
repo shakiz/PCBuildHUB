@@ -125,6 +125,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/start"
                         android:layout_gravity="center"
+                        android:layout_margin="4dp"
                         android:gravity="center"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
