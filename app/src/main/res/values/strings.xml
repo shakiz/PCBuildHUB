@@ -51,4 +51,8 @@
     <string name="welcome">Welcome</string>
     <string name="splash_screen_moto">We are so glad you are here</string>
     <string name="lets_go">Lets Go</string>
+    <string name="title_hint">Enter Title</string>
+    <string name="motherboard">Motherboard</string>
+    <string name="select_item">Choose</string>
+    <string name="category">Category</string>
 </resources>
