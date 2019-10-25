@@ -55,4 +55,9 @@
     <string name="motherboard">Motherboard</string>
     <string name="select_item">Choose</string>
     <string name="category">Category</string>
+    <string name="no_data">No Data</string>
+    <string name="itemname_sample">Intel 7th Generation Pentium Processor G4560</string>
+    <string name="price">Price : $12</string>
+    <string name="company_name_sample">AMD</string>
+    <string name="arrived_date">Arrived on 12,Jan,2019</string>
 </resources>
