@@ -5,25 +5,44 @@
     app:cardCornerRadius="12dp"
     android:elevation="8dp"
     app:cardUseCompatPadding="true"
-    android:layout_margin="8dp"
+    android:layout_margin="4dp"
     android:translationZ="4dp"
     android:id="@+id/item_layout_card"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="2dp">
+        android:layout_margin="4dp">
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:text="@string/itemname_sample"
-            android:layout_margin="2dp"
-            android:textSize="14sp"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="2dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_motherboard"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:ellipsize="end"
+                android:text="@string/itemname_sample"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,7 +85,7 @@
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
-                    android:src="@drawable/ic_motherboard"/>
+                    android:src="@drawable/ic_company"/>
                 <TextView
                     android:id="@+id/companyName"
                     android:layout_width="match_parent"
@@ -82,13 +101,29 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/arrivedDate"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:text="@string/arrived_date"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="2dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_date"/>
+
+            <TextView
+                android:id="@+id/arrivedDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:text="@string/arrived_date"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

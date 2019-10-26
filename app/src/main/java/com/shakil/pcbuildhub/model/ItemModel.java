@@ -8,8 +8,7 @@ public class ItemModel {
     private String companyName;
 
 
-    public ItemModel(int id, String title, double price, String arrivedDate, String companyName) {
-        this.id = id;
+    public ItemModel(String title, double price, String arrivedDate, String companyName) {
         this.title = title;
         this.price = price;
         this.arrivedDate = arrivedDate;
