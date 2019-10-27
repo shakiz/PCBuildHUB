@@ -9,12 +9,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.model.ItemModel;
-import com.stone.vega.library.VegaLayoutManager;
-
 import java.util.ArrayList;
 
 public class FragmentAddConfig extends Fragment implements View.OnClickListener {
@@ -26,6 +27,7 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     private ArrayList<ItemModel> motherboardList;
     private RecyclerView motherboardRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
+    private LinearLayout dialogLayout;
 
     public static synchronized FragmentAddConfig getInstance(){
         if (FRAGMENT_ADD_CONFIG == null) return new FragmentAddConfig();
@@ -57,6 +59,7 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
 
     private void customViewInit(Dialog itemDialog) {
         motherboardRecyclerView = itemDialog.findViewById(R.id.genericRecyclerView);
+        dialogLayout = itemDialog.findViewById(R.id.dialogLinearLayout);
         motherboardList = new ArrayList<>();
     }
 
@@ -98,6 +101,8 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
         customViewInit(itemDialog);
         itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         setMotherboardAdapter();
+        Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
+        dialogLayout.startAnimation(a);
         itemDialog.show();
     }
 }
