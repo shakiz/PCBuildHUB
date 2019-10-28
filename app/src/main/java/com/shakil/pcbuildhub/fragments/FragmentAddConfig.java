@@ -13,6 +13,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.model.ItemModel;
@@ -28,6 +30,8 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     private RecyclerView motherboardRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private LinearLayout dialogLayout;
+    private TextView motherboardTXTview;
+    private Dialog itemDialog;
 
     public static synchronized FragmentAddConfig getInstance(){
         if (FRAGMENT_ADD_CONFIG == null) return new FragmentAddConfig();
@@ -55,6 +59,7 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
 
     private void init(View view) {
         chooseMotherBoard = view.findViewById(R.id.motherboardButton);
+        motherboardTXTview = view.findViewById(R.id.selectedMotherboard);
     }
 
     private void customViewInit(Dialog itemDialog) {
@@ -65,6 +70,16 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
 
     private void bindUiWithComponents() {
         chooseMotherBoard.setOnClickListener(this);
+        getAndSetItemValue();
+    }
+
+    private void getAndSetItemValue() {
+        try {
+            if (!getArguments().getString("motherboard").isEmpty()){
+                motherboardTXTview.setVisibility(View.VISIBLE);
+                motherboardTXTview.setText(getArguments().getString("motherboard"));
+            }}
+        catch (Exception e){ e.printStackTrace();}
     }
 
     private ArrayList<ItemModel> setData() {
@@ -72,7 +87,6 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
         motherboardList.add(new ItemModel("MSI B450M-A PRO MAX AMD AM4 Motherboard",7000,"22 Dec,2019","MSI"));
         motherboardList.add(new ItemModel("MSI B450M PRO-M2 MAX AMD AM4 Gaming Motherboard",5600,"21 Oct,2019","MSI"));
         motherboardList.add(new ItemModel("Asrock B450M Pro4 AMD Motherboard",8000,"21 Jun,2019","AMD"));
-        motherboardList.add(new ItemModel("ASRock X399 Taichi USB 3.1 ATX AMD Motherboard",36000,"12 Sep,2019","AMD"));
         motherboardList.add(new ItemModel("ASRock X399 Taichi USB 3.1 ATX AMD Motherboard",36000,"21 Oct,2019","AMD"));
         motherboardList.add(new ItemModel("MSI X570-A Pro DDR4 AMD AM4 Socket Motherboard",17500,"21 Feb,2019","MSI"));
         motherboardList.add(new ItemModel("ASRock A320M-HDV R4.0 AMD Motherboard",5600,"21 Oct,2019","AMD"));
@@ -80,7 +94,7 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     }
 
     private void setMotherboardAdapter() {
-        itemRecyclerAdapter = new ItemRecyclerAdapter(context,setData());
+        itemRecyclerAdapter = new ItemRecyclerAdapter(context,setData(),itemDialog);
         layoutManager = new LinearLayoutManager(context);
         motherboardRecyclerView.setLayoutManager(layoutManager);
         motherboardRecyclerView.setAdapter(itemRecyclerAdapter);
@@ -96,7 +110,7 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     }
 
     private void showDialog() {
-        Dialog itemDialog = new Dialog(context);
+        itemDialog = new Dialog(context);
         itemDialog.setContentView(R.layout.generic_list_layout);
         customViewInit(itemDialog);
         itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);

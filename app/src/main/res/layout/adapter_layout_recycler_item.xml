@@ -43,7 +43,6 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,6 +121,41 @@
                 android:textStyle="bold"
                 android:text="@string/arrived_date"
                 android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="2dp">
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:text="Add"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:padding="4dp"
+                android:textAllCaps="false"
+                android:id="@+id/addItem"
+                android:clickable="true"
+                android:background="@drawable/button_shape_round_corner"
+                android:textColor="@color/md_white_1000"/>
+            <Button
+                android:id="@+id/details"
+                android:layout_width="80dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="32dp"
+                android:text="Details"
+                android:clickable="true"
+                android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
+                android:padding="4dp"
+                android:background="@drawable/button_shape_round_corner"/>
 
         </LinearLayout>
 

@@ -60,4 +60,5 @@
     <string name="price">Price : $12</string>
     <string name="company_name_sample">AMD</string>
     <string name="arrived_date">Arrived on 12,Jan,2019</string>
+    <string name="motherboard_sample">ASRock A320M-HDV R4.0 AMD Motherboard</string>
 </resources>
