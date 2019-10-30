@@ -47,7 +47,7 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("motherboard",itemModel.getTitle());
+                bundle.putString("item",itemModel.getTitle());
                 dialog.dismiss();
                 navigate(bundle);
             }

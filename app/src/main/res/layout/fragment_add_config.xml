@@ -123,6 +123,71 @@
                     android:layout_margin="2dp">
 
                     <LinearLayout
+                        android:id="@+id/cpuLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight=".4"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|left"
+                                android:textColor="@color/md_blue_grey_800"
+                                android:textSize="14sp"
+                                android:text="@string/cpu"/>
+                            <Button
+                                android:id="@+id/cpuButton"
+                                android:layout_width="0dp"
+                                android:layout_weight=".6"
+                                android:layout_height="40dp"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rectangle_background_button"
+                                android:ellipsize="end"
+                                android:scrollHorizontally="true"
+                                android:gravity="center"
+                                android:clickable="true"
+                                android:textColor="@color/md_white_1000"
+                                android:text="@string/select_item"
+                                android:textAllCaps="false"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/selectedCpu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:ellipsize="end"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            android:textColor="@color/md_red_200"
+                            android:text="@string/dummyString"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/motherboardLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
@@ -180,7 +245,7 @@
                             android:textStyle="bold"
                             android:visibility="gone"
                             android:textColor="@color/md_red_200"
-                            android:text="@string/motherboard_sample"/>
+                            android:text="@string/dummyString"/>
 
 
                     </LinearLayout>
