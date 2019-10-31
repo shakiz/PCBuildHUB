@@ -21,6 +21,7 @@ import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.model.ItemModel;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class FragmentAddConfig extends Fragment implements View.OnClickListener {
 
@@ -28,12 +29,12 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     private Button chooseMotherBoard , cpuButton;
     private Context context;
     private ItemRecyclerAdapter itemRecyclerAdapter;
-    private ArrayList<ItemModel> motherboardList ,  cpuList;
+    private ArrayList<ItemModel> motherboardList , cpuList;
+    private HashMap<String,String> itemNameHashMap;
     private RecyclerView itemRecyclerview;
     private RecyclerView.LayoutManager layoutManager;
     private LinearLayout dialogLayout;
     private RelativeLayout parentLayout;
-    private TextView motherboardTXTview;
     private Dialog itemDialog;
 
     public static synchronized FragmentAddConfig getInstance(){
@@ -64,7 +65,7 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
         parentLayout = view.findViewById(R.id.parent_container);
         chooseMotherBoard = view.findViewById(R.id.motherboardButton);
         cpuButton = view.findViewById(R.id.cpuButton);
-        motherboardTXTview = view.findViewById(R.id.selectedMotherboard);
+        itemNameHashMap = new HashMap<>();
     }
 
     private void customViewInit(Dialog itemDialog) {
@@ -77,20 +78,35 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     private void bindUiWithComponents() {
         cpuButton.setOnClickListener(this);
         chooseMotherBoard.setOnClickListener(this);
-        getAndSetItemValue(R.id.selectedCpu);
-        getAndSetItemValue(R.id.selectedMotherboard);
+        getAndSetItemValue(R.id.Cpu,R.string.cpu);
+        getAndSetItemValue(R.id.Motherboard,R.string.motherboard);
     }
 
-    private void getAndSetItemValue(int textViewResID) {
-        TextView textView = parentLayout.findViewById(textViewResID);
-        try {
-            String value = getArguments().getString("item");
-            Log.i("item",value);
-            if (!value.isEmpty()){
-                textView.setVisibility(View.VISIBLE);
-                textView.setText(value);
-            }}
+    private void getAndSetItemValue(int resID,int valueResID) {
+
+        try { getBundleValue(resID,valueResID); }
         catch (Exception e){ e.printStackTrace();}
+    }
+
+    private void getBundleValue(int resID,int valueResID) {
+        TextView textView = parentLayout.findViewById(resID);
+        String value = "";
+        switch (valueResID){
+            case R.string.cpu:
+                value = getArguments().getString("cpu");
+                break;
+            case R.string.motherboard:
+                value = getArguments().getString("motherboard");
+                break;
+            default:
+                value = "";
+        }
+        itemNameHashMap.put(getResources().getString(valueResID),value);
+        Log.i("itemName",value);
+        if (!value.isEmpty()){
+            textView.setVisibility(View.VISIBLE);
+            textView.setText(itemNameHashMap.get(getResources().getString(valueResID)));
+        }
     }
 
     private ArrayList<ItemModel> setData(int itemNameResId) {
@@ -105,9 +121,6 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
                 motherboardList.add(new ItemModel("ASRock A320M-HDV R4.0 AMD Motherboard",5600,"21 Oct,2019","AMD Ryzen"));
                 motherboardList.add(new ItemModel("MSI B450M-A PRO MAX AMD AM4 Motherboard",7000,"22 Dec,2019","MSI"));
                 motherboardList.add(new ItemModel("MSI B450M PRO-M2 MAX AMD AM4 Gaming Motherboard",5600,"21 Oct,2019","MSI"));
-                motherboardList.add(new ItemModel("Asrock B450M Pro4 AMD Motherboard",8000,"21 Jun,2019","AMD Ryzen"));
-                motherboardList.add(new ItemModel("ASRock X399 Taichi USB 3.1 ATX AMD Motherboard",36000,"21 Oct,2019","AMD Ryzen"));
-                motherboardList.add(new ItemModel("MSI X570-A Pro DDR4 AMD AM4 Socket Motherboard",17500,"21 Feb,2019","MSI"));
                 return motherboardList;
             default:
                 break;
@@ -116,7 +129,7 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     }
 
     private void setBuildItemAdapter(int itemResId) {
-        itemRecyclerAdapter = new ItemRecyclerAdapter(context,setData(itemResId),itemDialog);
+        itemRecyclerAdapter = new ItemRecyclerAdapter(context,setData(itemResId),itemDialog,itemResId);
         layoutManager = new LinearLayoutManager(context);
         itemRecyclerview.setLayoutManager(layoutManager);
         itemRecyclerview.setAdapter(itemRecyclerAdapter);

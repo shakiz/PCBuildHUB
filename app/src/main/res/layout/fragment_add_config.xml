@@ -167,7 +167,7 @@
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/selectedCpu"
+                            android:id="@+id/Cpu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
@@ -231,7 +231,7 @@
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/selectedMotherboard"
+                            android:id="@+id/Motherboard"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"

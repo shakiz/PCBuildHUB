@@ -22,11 +22,13 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
     private Context context;
     private ArrayList<ItemModel> itemModelList;
     private Dialog dialog;
+    int parentResName;
 
-    public ItemRecyclerAdapter(Context context, ArrayList<ItemModel> itemModelList, Dialog dialog) {
+    public ItemRecyclerAdapter(Context context, ArrayList<ItemModel> itemModelList, Dialog dialog,int parentResName) {
         this.context = context;
         this.itemModelList = itemModelList;
         this.dialog = dialog;
+        this.parentResName = parentResName;
     }
 
     @NonNull
@@ -46,12 +48,26 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString("item",itemModel.getTitle());
-                dialog.dismiss();
-                navigate(bundle);
+
+                setBundleData(itemModel.getTitle());
+
             }
         });
+    }
+
+    private void setBundleData(String data) {
+        Bundle bundle = new Bundle();
+
+        switch (parentResName){
+            case R.string.cpu:
+                bundle.putString("cpu",data);
+                break;
+            case R.string.motherboard:
+                bundle.putString("motherboard",data);
+                break;
+        }
+        dialog.dismiss();
+        navigate(bundle);
     }
 
     private void navigate(Bundle bundle) {
