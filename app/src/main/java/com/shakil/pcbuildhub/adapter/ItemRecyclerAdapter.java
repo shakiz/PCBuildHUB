@@ -1,20 +1,15 @@
 package com.shakil.pcbuildhub.adapter;
 
-import android.app.AppComponentFactory;
 import android.app.Dialog;
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.shakil.pcbuildhub.R;
-import com.shakil.pcbuildhub.fragments.FragmentAddConfig;
 import com.shakil.pcbuildhub.model.ItemModel;
 import java.util.ArrayList;
 
@@ -22,13 +17,13 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
     private Context context;
     private ArrayList<ItemModel> itemModelList;
     private Dialog dialog;
-    int parentResName;
+    private onAddClickListener onAddClickListener;
 
-    public ItemRecyclerAdapter(Context context, ArrayList<ItemModel> itemModelList, Dialog dialog,int parentResName) {
+    public ItemRecyclerAdapter(Context context, ArrayList<ItemModel> itemModelList, Dialog dialog,onAddClickListener onAddClickListener) {
         this.context = context;
         this.itemModelList = itemModelList;
         this.dialog = dialog;
-        this.parentResName = parentResName;
+        this.onAddClickListener = onAddClickListener;
     }
 
     @NonNull
@@ -48,34 +43,17 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                setBundleData(itemModel.getTitle());
-
+                dialog.dismiss();
+                onAddClickListener.respond(itemModel);
             }
         });
     }
 
-    private void setBundleData(String data) {
-        Bundle bundle = new Bundle();
-
-        switch (parentResName){
-            case R.string.cpu:
-                bundle.putString("cpu",data);
-                break;
-            case R.string.motherboard:
-                bundle.putString("motherboard",data);
-                break;
-        }
-        dialog.dismiss();
-        navigate(bundle);
-    }
-
-    private void navigate(Bundle bundle) {
-        FragmentAddConfig addConfig = new FragmentAddConfig();
-        addConfig.setArguments(bundle);
-        FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container,addConfig).commit();
-    }
+//    private void navigate() {
+//        FragmentAddConfig addConfig = new FragmentAddConfig();
+//        FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+//        fragmentManager.beginTransaction().replace(R.id.container,addConfig).commit();
+//    }
 
     @Override
     public int getItemCount() {
@@ -94,5 +72,9 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
             add = itemView.findViewById(R.id.addItem);
             details = itemView.findViewById(R.id.details);
         }
+    }
+
+    public interface onAddClickListener {
+        void respond(ItemModel itemModel);
     }
 }

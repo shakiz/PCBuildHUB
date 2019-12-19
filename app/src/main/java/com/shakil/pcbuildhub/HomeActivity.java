@@ -14,11 +14,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+
+import com.shakil.pcbuildhub.activities.AddNewConfigActivity;
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
 import com.shakil.pcbuildhub.drawerextra.SpaceItem;
-import com.shakil.pcbuildhub.fragments.FragmentAddConfig;
 import com.shakil.pcbuildhub.fragments.FragmentPostDashboard;
 import com.shakil.pcbuildhub.fragments.FragmentProfile;
 import com.shakil.pcbuildhub.onboard.StartWithMobileActivity;
@@ -93,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
                             return;
                         }
                         else if (pos == POS_ADD_CONFIG){
-                            showFragment(FragmentAddConfig.getInstance());
+                            startActivity(new Intent(HomeActivity.this, AddNewConfigActivity.class));
                             return;
                         }
                     }

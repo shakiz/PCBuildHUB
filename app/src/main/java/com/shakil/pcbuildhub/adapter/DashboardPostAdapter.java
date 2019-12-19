@@ -17,7 +17,6 @@ public class DashboardPostAdapter extends RecyclerView.Adapter<DashboardPostAdap
 
     private ArrayList<PostModel> postModelList;
     private Context context;
-    private Random random = new Random();
 
     public DashboardPostAdapter(ArrayList<PostModel> postModelList, Context context) {
         this.postModelList = postModelList;
@@ -40,7 +39,6 @@ public class DashboardPostAdapter extends RecyclerView.Adapter<DashboardPostAdap
         holder.title.setText(postModel.getTitle());
         holder.postBy.setText(postModel.getPostBy());
         holder.date.setText(postModel.getDate());
-        holder.linearLayout.getLayoutParams().height = getRandomIntInRange(200,150);
     }
 
     @Override
@@ -48,10 +46,6 @@ public class DashboardPostAdapter extends RecyclerView.Adapter<DashboardPostAdap
         return postModelList.size();
     }
 
-    // Custom method to get a random number between a range
-    protected int getRandomIntInRange(int max, int min){
-        return random.nextInt((max-min)+min)+min;
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title,postBy,date;

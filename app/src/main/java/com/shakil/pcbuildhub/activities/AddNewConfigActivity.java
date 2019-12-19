@@ -1,19 +1,15 @@
-package com.shakil.pcbuildhub.fragments;
+package com.shakil.pcbuildhub.activities;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.os.Bundle;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.app.Dialog;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.shakil.pcbuildhub.R;
@@ -21,50 +17,30 @@ import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.model.ItemModel;
 import java.util.ArrayList;
 
-public class FragmentAddConfig extends Fragment implements View.OnClickListener {
+public class AddNewConfigActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private static final FragmentAddConfig FRAGMENT_ADD_CONFIG = null;
     private Button chooseMotherBoard , cpuButton;
-    private Context context;
     private ItemRecyclerAdapter itemRecyclerAdapter;
     private ArrayList<ItemModel> motherboardList , cpuList;
     private RecyclerView itemRecyclerview;
     private RecyclerView.LayoutManager layoutManager;
     private LinearLayout dialogLayout;
-    private RelativeLayout parentLayout;
     private Dialog itemDialog;
     private TextView cpuTXT , motherboardTXT;
 
-    public static synchronized FragmentAddConfig getInstance(){
-        if (FRAGMENT_ADD_CONFIG == null) return new FragmentAddConfig();
-        else return FRAGMENT_ADD_CONFIG;
-    }
-
-    public FragmentAddConfig() {
-        
-    }
-
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.context = context;
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add_config, container, false);
-        init(view);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_new_config);
+        init();
         bindUiWithComponents();
-        return view;
     }
 
-    private void init(View view) {
-        parentLayout = view.findViewById(R.id.parent_container);
-        chooseMotherBoard = view.findViewById(R.id.motherboardButton);
-        cpuButton = view.findViewById(R.id.cpuButton);
-        cpuTXT = view.findViewById(R.id.Cpu);
-        motherboardTXT = view.findViewById(R.id.Motherboard);
+    private void init() {
+        chooseMotherBoard = findViewById(R.id.motherboardButton);
+        cpuButton = findViewById(R.id.cpuButton);
+        cpuTXT = findViewById(R.id.Cpu);
+        motherboardTXT = findViewById(R.id.Motherboard);
     }
 
     private void customViewInit(Dialog itemDialog) {
@@ -102,15 +78,15 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     }
 
     private void setBuildItemAdapter(final TextView valueTXT, ArrayList<ItemModel> dataList) {
-        itemRecyclerAdapter = new ItemRecyclerAdapter(context, dataList, itemDialog, new ItemRecyclerAdapter.onAddClickListener() {
+        itemRecyclerAdapter = new ItemRecyclerAdapter(this, dataList, itemDialog, new ItemRecyclerAdapter.onAddClickListener() {
             @Override
             public void respond(ItemModel itemModel) {
-                Toast.makeText(getContext(),""+itemModel.getTitle(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),""+itemModel.getTitle(),Toast.LENGTH_SHORT).show();
                 valueTXT.setVisibility(View.VISIBLE);
                 valueTXT.setText(itemModel.getTitle());
             }
         });
-        layoutManager = new LinearLayoutManager(context);
+        layoutManager = new LinearLayoutManager(this);
         itemRecyclerview.setLayoutManager(layoutManager);
         itemRecyclerview.setAdapter(itemRecyclerAdapter);
         itemRecyclerAdapter.notifyDataSetChanged();
@@ -131,17 +107,12 @@ public class FragmentAddConfig extends Fragment implements View.OnClickListener 
     }
 
     private void showDialog() {
-        itemDialog = new Dialog(context);
+        itemDialog = new Dialog(this);
         itemDialog.setContentView(R.layout.generic_list_layout);
         customViewInit(itemDialog);
         itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
         dialogLayout.startAnimation(a);
         itemDialog.show();
-    }
-
-    private void setLayoutVisibility(int layoutResId, ArrayList<?> dataList){
-        LinearLayout linearLayout = (LinearLayout)parentLayout.findViewById(layoutResId);
-        if (dataList.size() > 0)linearLayout.setVisibility(View.VISIBLE);
     }
 }
