@@ -52,7 +52,19 @@
     <string name="splash_screen_moto">We are so glad you are here</string>
     <string name="lets_go">Lets Go</string>
     <string name="title_hint">Enter Title</string>
+
+    <!--Components name starts-->
     <string name="motherboard">Motherboard</string>
+    <string name="cpu">Cpu</string>
+    <string name="ram1">RAM1</string>
+    <string name="ram2">RAM2</string>
+    <string name="storage_1">Storage - 1</string>
+    <string name="storage_2">Storage - 2</string>
+    <string name="graphics_card">Graphics Card</string>
+    <string name="power_supply">Power Spply</string>
+    <string name="casing">Casing</string>
+    <!--Components name ends-->
+
     <string name="select_item">Choose</string>
     <string name="category">Category</string>
     <string name="no_data">No Data</string>
@@ -62,6 +74,5 @@
     <string name="arrived_date">Arrived on 12,Jan,2019</string>
     <string name="motherboard_sample">ASRock A320M-HDV R4.0 AMD Motherboard</string>
     <string name="dummyString">Test Data</string>
-    <string name="cpu">Cpu</string>
     <string name="add_new_config">Add New Config</string>
 </resources>
