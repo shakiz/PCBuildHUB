@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -14,7 +15,6 @@ import com.shakil.pcbuildhub.R;
 public class SplashActivity extends AppCompatActivity {
 
     private LinearLayout linearLayout;
-    private ImageView nextPage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,16 +27,17 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void bindUIWithComponents() {
-        nextPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
                 startActivity(new Intent(SplashActivity.this,WelcomeHomeActivity.class));
             }
-        });
+        }, 1400);
+
     }
 
     private void init() {
         linearLayout = findViewById(R.id.mainLayout);
-        nextPage = findViewById(R.id.nextPage);
     }
 }

@@ -1,9 +1,11 @@
 package com.shakil.pcbuildhub.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.shakil.pcbuildhub.HomeActivity;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.model.ItemModel;
@@ -19,6 +22,7 @@ import java.util.ArrayList;
 
 public class AddNewConfigActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private Toolbar toolbar;
     private Button chooseMotherBoard , cpuButton;
     private ItemRecyclerAdapter itemRecyclerAdapter;
     private ArrayList<ItemModel> motherboardList , cpuList;
@@ -33,10 +37,21 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_config);
         init();
+
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddNewConfigActivity.this, HomeActivity.class));
+            }
+        });
+
         bindUiWithComponents();
     }
 
     private void init() {
+        toolbar = findViewById(R.id.tool_bar);
         chooseMotherBoard = findViewById(R.id.motherboardButton);
         cpuButton = findViewById(R.id.cpuButton);
         cpuTXT = findViewById(R.id.Cpu);
@@ -114,5 +129,10 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
         Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
         dialogLayout.startAnimation(a);
         itemDialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(AddNewConfigActivity.this, HomeActivity.class));
     }
 }

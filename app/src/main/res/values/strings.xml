@@ -63,4 +63,5 @@
     <string name="motherboard_sample">ASRock A320M-HDV R4.0 AMD Motherboard</string>
     <string name="dummyString">Test Data</string>
     <string name="cpu">Cpu</string>
+    <string name="add_new_config">Add New Config</string>
 </resources>
