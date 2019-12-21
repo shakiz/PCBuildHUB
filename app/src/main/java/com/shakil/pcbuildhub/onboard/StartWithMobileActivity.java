@@ -3,6 +3,7 @@ package com.shakil.pcbuildhub.onboard;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -53,6 +54,11 @@ public class StartWithMobileActivity extends AppCompatActivity {
     public void showCustomDialog() {
         mView.show(getSupportFragmentManager(), "");
         mView.setCanceledOnTouchOutside(true);
-        if (!mView.isVisible()) startActivity(new Intent(StartWithMobileActivity.this,HomeActivity.class));
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                startActivity(new Intent(StartWithMobileActivity.this,HomeActivity.class));
+            }
+        }, 1400);
     }
 }

@@ -110,7 +110,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        list = findViewById(R.id.list);
+        list = findViewById(R.id.nav_list_item);
         adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_POST).setChecked(true),
                 createItemFor(POS_PROFILE),
