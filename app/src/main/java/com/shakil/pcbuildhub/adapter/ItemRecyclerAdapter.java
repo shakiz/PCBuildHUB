@@ -2,7 +2,6 @@ package com.shakil.pcbuildhub.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,7 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adapter_layout_recycler_item,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_layout_config_item,parent,false);
         return new ViewHolder(view);
     }
 

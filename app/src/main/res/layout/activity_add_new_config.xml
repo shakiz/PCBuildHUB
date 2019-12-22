@@ -32,6 +32,7 @@
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
             android:layout_below="@id/app_bar"
+            android:layout_above="@id/totalLayout"
             android:layout_width="match_parent"
             android:layout_height="fill_parent">
 
@@ -1200,6 +1201,46 @@
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toLeftOf="@id/mSaveMeterMaster"
+            android:id="@+id/totalLayout"
+            android:background="@drawable/rounded_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TotalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textColor="@color/md_white_1000"
+                android:text="@string/total"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mSaveMeterMaster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_add"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:backgroundTint="@color/md_grey_400"
+            app:fabSize="auto" />
+
+
     </RelativeLayout>
 
 </layout>

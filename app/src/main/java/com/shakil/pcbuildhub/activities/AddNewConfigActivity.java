@@ -13,7 +13,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.shakil.pcbuildhub.HomeActivity;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
@@ -30,6 +29,7 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
     private RecyclerView itemRecyclerView;
     private LinearLayout dialogLayout;
     private Dialog itemDialog;
+    private int TotalAmount = 0;
     private ActivityAddNewConfigBinding newConfigBinding;
 
     @Override
@@ -74,6 +74,10 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void bindUiWithComponents() {
+
+        Animation a = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        newConfigBinding.parentContainer.startAnimation(a);
+
         newConfigBinding.cpuButton.setOnClickListener(this);
         newConfigBinding.motherboardButton.setOnClickListener(this);
         newConfigBinding.ram1Button.setOnClickListener(this);
@@ -179,9 +183,10 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
         itemRecyclerAdapter = new ItemRecyclerAdapter(this, dataList, itemDialog, new ItemRecyclerAdapter.onAddClickListener() {
             @Override
             public void respond(ItemModel itemModel) {
-                Toast.makeText(getApplicationContext(),""+itemModel.getTitle(),Toast.LENGTH_SHORT).show();
                 if (valueTXT.getVisibility() == View.GONE)valueTXT.setVisibility(View.VISIBLE);
                 valueTXT.setText(itemModel.getTitle());
+                TotalAmount += itemModel.getPrice();
+                newConfigBinding.TotalAmount.setText("Total Amount : "+TotalAmount);
             }
         });
         itemRecyclerView.setLayoutManager(new LinearLayoutManager(this));

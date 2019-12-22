@@ -13,12 +13,10 @@
         android:id="@+id/icon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:clickable="true"
         android:src="@drawable/usericon"/>
 
     <Space
         android:layout_width="8dp"
-        android:clickable="true"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -26,7 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:clickable="true"
         android:layout_marginRight="16dp"
         android:text="@string/itemname" />
 

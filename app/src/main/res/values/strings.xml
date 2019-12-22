@@ -80,4 +80,5 @@
     <string name="mouse">Mouse</string>
     <string name="operating_system">Operating System</string>
     <string name="ups">UPS</string>
+    <string name="total">Total</string>
 </resources>
