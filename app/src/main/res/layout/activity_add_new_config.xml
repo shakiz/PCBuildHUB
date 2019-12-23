@@ -1206,13 +1206,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:gravity="center"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_toLeftOf="@id/mSaveMeterMaster"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
             android:id="@+id/totalLayout"
-            android:background="@drawable/rounded_layout"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/TotalAmount"
@@ -1221,24 +1221,41 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:padding="12dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_layout"
                 android:textSize="16sp"
                 android:textColor="@color/md_white_1000"
                 android:text="@string/total"/>
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/saveConfig"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginRight="8dp"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_action_add"
+                android:background="@drawable/transparent_ripple"
+                android:clickable="true"
+                app:backgroundTint="@color/md_white_1000"
+                app:fabSize="auto" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/refreshConfig"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_margin="4dp"
+                android:layout_toRightOf="@id/saveConfig"
+                android:background="@drawable/transparent_ripple"
+                android:padding="4dp"
+                android:src="@drawable/ic_refresh"
+                android:clickable="true"
+                app:backgroundTint="@color/md_white_1000"
+                app:fabSize="auto" />
+
         </LinearLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/mSaveMeterMaster"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="4dp"
-            android:src="@drawable/ic_add"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground"
-            app:backgroundTint="@color/md_grey_400"
-            app:fabSize="auto" />
+
 
 
     </RelativeLayout>
