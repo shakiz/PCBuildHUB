@@ -130,6 +130,9 @@
             android:orientation="horizontal"
             android:layout_gravity="center"
             android:gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_margin="2dp">
 
             <Button

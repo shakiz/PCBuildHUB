@@ -176,12 +176,13 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
 
     private void clearUI() {
         int[] configTextResIds = new int[]{R.id.Cpu,R.id.Motherboard,R.id.RAM1,R.id.RAM2, R.id.Storage1,R.id.Storage2,R.id.GraphicsCard,R.id.PowerSupply,R.id.Casing,R.id.Monitor,
-                    R.id.Keyboard,R.id.Mouse,R.id.OperatingSystem,R.id.UPS,R.id.TotalAmount};
+                    R.id.Keyboard,R.id.Mouse,R.id.OperatingSystem,R.id.UPS};
         for (int resId : configTextResIds){
             TextView textView = findViewById(resId);
             textView.setText("");
             textView.setVisibility(View.GONE);
         }
+        newConfigBinding.TotalAmount.setText("Total here");
     }
 
     private void showDialog() {
