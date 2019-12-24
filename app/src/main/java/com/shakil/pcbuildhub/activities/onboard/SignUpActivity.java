@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub.onboard;
+package com.shakil.pcbuildhub.activities.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 

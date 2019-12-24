@@ -10,9 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".activities.AddNewConfigActivity"></activity>
+        <activity android:name=".activities.addconfig.AddNewConfigActivity"></activity>
         <activity
-            android:name=".onboard.SplashActivity"
+            android:name=".activities.onboard.SplashActivity"
             android:theme="@style/SplashAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,42 +21,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".onboard.WelcomeHomeActivity"
+            android:name=".activities.onboard.WelcomeHomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.onboard.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".onboard.LoginActivity"
+            android:name=".activities.onboard.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".onboard.ForgotPasswordActivity"
+            android:name=".activities.onboard.ForgotPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".onboard.SignUpActivity"
+            android:name=".activities.onboard.SignUpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".onboard.PasswordResetVerificationActivity"
+            android:name=".activities.onboard.PasswordResetVerificationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".onboard.StartWithMobileActivity"
+            android:name=".activities.onboard.StartWithMobileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".onboard.StartWithEmailActivity"
+            android:name=".activities.onboard.StartWithEmailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />

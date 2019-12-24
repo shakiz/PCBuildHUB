@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub.activities;
+package com.shakil.pcbuildhub.activities.addconfig;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,13 +13,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.shakil.pcbuildhub.HomeActivity;
+import android.widget.Toast;
+import com.shakil.pcbuildhub.activities.onboard.HomeActivity;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.databinding.ActivityAddNewConfigBinding;
 import com.shakil.pcbuildhub.model.ItemModel;
 import com.shakil.pcbuildhub.utils.DumpDummyData;
-
 import java.util.ArrayList;
 
 public class AddNewConfigActivity extends AppCompatActivity implements View.OnClickListener{
@@ -96,6 +96,9 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
         newConfigBinding.mouseButton.setOnClickListener(this);
         newConfigBinding.osButton.setOnClickListener(this);
         newConfigBinding.upsButton.setOnClickListener(this);
+
+        newConfigBinding.saveConfig.setOnClickListener(this);
+        newConfigBinding.refreshConfig.setOnClickListener(this);
     }
 
     private void setBuildItemAdapter(final TextView valueTXT, ArrayList<ItemModel> dataList) {
@@ -159,6 +162,25 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
             case R.id.upsButton:
                 setBuildItemAdapter(newConfigBinding.UPS, dumpDummyData.setData(R.string.ups));
                 break;
+            case R.id.saveConfig:
+                Toast.makeText(getApplicationContext(),R.string.saved,Toast.LENGTH_SHORT).show();
+                clearUI();
+                itemDialog.dismiss();
+                break;
+            case R.id.refreshConfig:
+                clearUI();
+                itemDialog.dismiss();
+                break;
+        }
+    }
+
+    private void clearUI() {
+        int[] configTextResIds = new int[]{R.id.Cpu,R.id.Motherboard,R.id.RAM1,R.id.RAM2, R.id.Storage1,R.id.Storage2,R.id.GraphicsCard,R.id.PowerSupply,R.id.Casing,R.id.Monitor,
+                    R.id.Keyboard,R.id.Mouse,R.id.OperatingSystem,R.id.UPS,R.id.TotalAmount};
+        for (int resId : configTextResIds){
+            TextView textView = findViewById(resId);
+            textView.setText("");
+            textView.setVisibility(View.GONE);
         }
     }
 

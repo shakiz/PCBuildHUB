@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -71,7 +72,7 @@ public class FragmentPostDashboard extends Fragment {
 
     private void setAdapter() {
         postAdapter = new DashboardPostAdapter(postModelList,context);
-        layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        layoutManager = new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(postAdapter);
         postAdapter.notifyDataSetChanged();

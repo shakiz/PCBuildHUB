@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub.onboard;
+package com.shakil.pcbuildhub.activities.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import com.roger.catloadinglibrary.CatLoadingView;
-import com.shakil.pcbuildhub.HomeActivity;
 import com.shakil.pcbuildhub.R;
 
 public class StartWithMobileActivity extends AppCompatActivity {

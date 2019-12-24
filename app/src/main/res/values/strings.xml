@@ -81,4 +81,5 @@
     <string name="operating_system">Operating System</string>
     <string name="ups">UPS</string>
     <string name="total">Total</string>
+    <string name="saved">Saved</string>
 </resources>

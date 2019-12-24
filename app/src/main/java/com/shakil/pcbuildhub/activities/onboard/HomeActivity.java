@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub;
+package com.shakil.pcbuildhub.activities.onboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,14 +15,14 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
-import com.shakil.pcbuildhub.activities.AddNewConfigActivity;
+import com.shakil.pcbuildhub.R;
+import com.shakil.pcbuildhub.activities.addconfig.AddNewConfigActivity;
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
 import com.shakil.pcbuildhub.drawerextra.SpaceItem;
 import com.shakil.pcbuildhub.fragments.FragmentPostDashboard;
 import com.shakil.pcbuildhub.fragments.FragmentProfile;
-import com.shakil.pcbuildhub.onboard.StartWithMobileActivity;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 import java.util.Arrays;
