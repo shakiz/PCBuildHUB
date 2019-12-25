@@ -14,7 +14,6 @@ Modern era is all about computer and it’s mass uses. But general people freque
 *	Strictly concerns with user’s preferred budget and recommendations.
 
 ## Scopes
-Scopes
 *	Registration process.
 *	User’s budget and recommendations
 *	Suggestions for best combinations of hardware.
