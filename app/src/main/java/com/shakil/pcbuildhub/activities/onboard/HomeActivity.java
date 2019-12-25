@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.activities.addconfig.AddNewConfigActivity;
+import com.shakil.pcbuildhub.activities.buildyourpc.BuildYourPcActivity;
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
@@ -95,6 +96,10 @@ public class HomeActivity extends AppCompatActivity {
                         }
                         else if (pos == POS_ADD_CONFIG){
                             startActivity(new Intent(HomeActivity.this, AddNewConfigActivity.class));
+                            return;
+                        }
+                        else if (pos == POS_BUILD_YOUR_PC){
+                            startActivity(new Intent(HomeActivity.this, BuildYourPcActivity.class));
                             return;
                         }
                     }

@@ -10,7 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".activities.addconfig.AddNewConfigActivity"></activity>
+
+        <activity
+            android:name=".activities.buildyourpc.BuildYourPcActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".activities.addconfig.AddNewConfigActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="adjustNothing" />
+
         <activity
             android:name=".activities.onboard.SplashActivity"
             android:theme="@style/SplashAppTheme">
