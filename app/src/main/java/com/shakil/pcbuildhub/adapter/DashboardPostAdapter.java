@@ -22,9 +22,6 @@ public class DashboardPostAdapter extends RecyclerView.Adapter<DashboardPostAdap
         this.context = context;
     }
 
-    public DashboardPostAdapter() {
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

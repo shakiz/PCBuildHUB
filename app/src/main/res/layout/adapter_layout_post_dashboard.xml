@@ -27,7 +27,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:padding="4dp"
                 android:id="@+id/content_layout"
                 android:orientation="vertical">
 
@@ -64,8 +63,8 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:src="@drawable/ic_user"/>
 
                     <TextView
@@ -90,8 +89,8 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:padding="3dp"
                         android:src="@drawable/ic_date"/>
 
@@ -115,37 +114,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:padding="4dp"
                 android:layout_gravity="left"
                 android:gravity="left"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/like"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/ic_heart_black"
                     android:padding="2dp"
                     android:layout_gravity="center" />
                 <ImageView
                     android:id="@+id/share"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/ic_share_black"
                     android:padding="2dp"
                     android:layout_marginLeft="8dp"
                     android:layout_gravity="center" />
                 <ImageView
                     android:id="@+id/save"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/ic_save_button"
                     android:layout_marginLeft="8dp"
                     android:padding="3dp"
                     android:layout_gravity="center" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 
