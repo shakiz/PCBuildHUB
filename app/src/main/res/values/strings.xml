@@ -83,4 +83,6 @@
     <string name="total">Total</string>
     <string name="saved">Saved</string>
     <string name="build_your_pc">Build Your PC</string>
+    <string name="warning_message">Please select data</string>
+    <string name="select_data">Select your option</string>
 </resources>
