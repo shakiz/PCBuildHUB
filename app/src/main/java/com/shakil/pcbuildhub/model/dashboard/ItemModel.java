@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub.model;
+package com.shakil.pcbuildhub.model.dashboard;
 
 public class ItemModel {
     private int id;

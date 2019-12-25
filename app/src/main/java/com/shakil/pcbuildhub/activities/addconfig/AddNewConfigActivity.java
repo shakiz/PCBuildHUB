@@ -18,8 +18,10 @@ import com.shakil.pcbuildhub.activities.onboard.HomeActivity;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.databinding.ActivityAddNewConfigBinding;
-import com.shakil.pcbuildhub.model.ItemModel;
+import com.shakil.pcbuildhub.model.dashboard.ItemModel;
 import com.shakil.pcbuildhub.utils.DumpDummyData;
+import com.shakil.pcbuildhub.utils.UxDataAdapter;
+
 import java.util.ArrayList;
 
 public class AddNewConfigActivity extends AppCompatActivity implements View.OnClickListener{
@@ -34,6 +36,7 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
     private int TotalAmount = 0;
     private ActivityAddNewConfigBinding newConfigBinding;
     private DumpDummyData dumpDummyData;
+    private UxDataAdapter uxDataAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
 
     private void init() {
         toolbar = findViewById(R.id.tool_bar);
+        uxDataAdapter = new UxDataAdapter(this);
     }
 
     private void customViewInit(Dialog itemDialog) {
@@ -81,6 +85,10 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
 
         Animation a = AnimationUtils.loadAnimation(this, R.anim.fadein);
         newConfigBinding.parentContainer.startAnimation(a);
+
+        //region set spinnerAdapter start
+        uxDataAdapter.setSpinnerAdapter(newConfigBinding.Category,new String[]{"Gaming","Production","Streaming"});
+        //region spinnerAdapter end
 
         newConfigBinding.cpuButton.setOnClickListener(this);
         newConfigBinding.motherboardButton.setOnClickListener(this);

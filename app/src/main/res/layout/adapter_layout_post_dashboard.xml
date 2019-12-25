@@ -124,14 +124,14 @@
                     android:id="@+id/like"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:src="@drawable/ic_heart"
+                    android:src="@drawable/ic_heart_black"
                     android:padding="2dp"
                     android:layout_gravity="center" />
                 <ImageView
                     android:id="@+id/share"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:src="@drawable/ic_share"
+                    android:src="@drawable/ic_share_black"
                     android:padding="2dp"
                     android:layout_marginLeft="8dp"
                     android:layout_gravity="center" />

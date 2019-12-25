@@ -207,7 +207,167 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="@color/md_grey_200"
+                    app:cardBackgroundColor="@color/md_blue_grey_300"
+                    android:elevation="4dp"
+                    android:id="@+id/postCardView2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical">
+
+
+                        <!--Post heading section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="3"
+                            android:orientation="horizontal">
+
+                            <com.github.florent37.shapeofview.shapes.CircleView
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/user"/>
+
+                            </com.github.florent37.shapeofview.shapes.CircleView>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/username"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/md_white_1000"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/date"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/md_white_1000"/>
+
+                            </LinearLayout>
+
+                            <com.github.florent37.shapeofview.shapes.CircleView
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="18dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_arrow_down_white"/>
+
+                            </com.github.florent37.shapeofview.shapes.CircleView>
+
+                        </LinearLayout>
+
+                        <!--Post description section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/post_description"
+                                android:layout_marginLeft="4dp"
+                                android:ellipsize="end"
+                                android:maxLines="3"
+                                android:textColor="@color/md_white_1000"
+                                android:layout_marginRight="4dp"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+                        <!--Post short details section-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal"
+                            android:gravity="right"
+                            android:layout_gravity="right">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@drawable/ic_heart_white"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:textColor="@color/md_white_1000"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/likes"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="4dp"
+                                    android:src="@drawable/ic_share_white"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:textColor="@color/md_white_1000"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/likes"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/md_blue_grey_300"
                     android:elevation="4dp"
                     android:id="@+id/postCardView1">
 
@@ -251,13 +411,13 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/username"
                                     android:textSize="14sp"
-                                    android:textColor="@color/md_blue_grey_800"/>
+                                    android:textColor="@color/md_white_1000"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/date"
                                     android:textSize="12sp"
-                                    android:textColor="@color/md_blue_grey_800"/>
+                                    android:textColor="@color/md_white_1000"/>
 
                             </LinearLayout>
 
@@ -272,7 +432,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="18dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/ic_arrow_down"/>
+                                    android:src="@drawable/ic_arrow_down_white"/>
 
                             </com.github.florent37.shapeofview.shapes.CircleView>
 
@@ -290,6 +450,9 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/post_description"
                                 android:layout_marginLeft="4dp"
+                                android:ellipsize="end"
+                                android:maxLines="3"
+                                android:textColor="@color/md_white_1000"
                                 android:layout_marginRight="4dp"
                                 android:textAlignment="textStart"
                                 android:layout_gravity="start"
@@ -317,11 +480,14 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="right"
                                     android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_heart"/>
+                                    android:src="@drawable/ic_heart_white"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="right"
+                                    android:textColor="@color/md_white_1000"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
                                     android:text="@string/likes"/>
 
                             </LinearLayout>
@@ -338,163 +504,14 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="right"
                                     android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_share"/>
+                                    android:src="@drawable/ic_share_white"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="right"
-                                    android:text="@string/likes"/>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="@color/md_grey_200"
-                    android:elevation="4dp"
-                    android:layout_marginBottom="8dp"
-                    android:id="@+id/postCardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:orientation="vertical">
-
-
-                        <!--Post heading section-->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:weightSum="3"
-                            android:orientation="horizontal">
-
-                            <com.github.florent37.shapeofview.shapes.CircleView
-                                android:layout_width="0dp"
-                                android:layout_weight=".5"
-                                android:layout_margin="4dp"
-                                android:layout_gravity="center"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="32dp"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/user"/>
-
-                            </com.github.florent37.shapeofview.shapes.CircleView>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_weight="2"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/username"
-                                    android:textSize="14sp"
-                                    android:textColor="@color/md_blue_grey_800"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/date"
-                                    android:textSize="12sp"
-                                    android:textColor="@color/md_blue_grey_800"/>
-
-                            </LinearLayout>
-
-                            <com.github.florent37.shapeofview.shapes.CircleView
-                                android:layout_width="0dp"
-                                android:layout_weight=".5"
-                                android:layout_margin="4dp"
-                                android:layout_gravity="center"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="18dp"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/ic_arrow_down"/>
-
-                            </com.github.florent37.shapeofview.shapes.CircleView>
-
-                        </LinearLayout>
-
-                        <!--Post description section-->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/post_description"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:textAlignment="textStart"
-                                android:layout_gravity="start"
-                                android:textSize="14sp"/>
-
-                        </LinearLayout>
-
-                        <!--Post short details section-->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:orientation="horizontal"
-                            android:gravity="right"
-                            android:layout_gravity="right">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="18dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right"
-                                    android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_heart"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="right"
-                                    android:text="@string/likes"/>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="18dp"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="right"
-                                    android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_share"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="right"
+                                    android:textColor="@color/md_white_1000"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
                                     android:text="@string/likes"/>
 
                             </LinearLayout>

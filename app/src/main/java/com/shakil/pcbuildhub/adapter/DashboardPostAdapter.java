@@ -9,9 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.shakil.pcbuildhub.R;
-import com.shakil.pcbuildhub.model.PostModel;
+import com.shakil.pcbuildhub.model.post.PostModel;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class DashboardPostAdapter extends RecyclerView.Adapter<DashboardPostAdapter.ViewHolder> {
 

@@ -122,7 +122,7 @@
                                 android:layout_height="40dp"
                                 android:layout_margin="5dp"
                                 android:background="@drawable/rectangle_background"
-                                android:id="@+id/category"></Spinner>
+                                android:id="@+id/Category"></Spinner>
 
                         </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub.model;
+package com.shakil.pcbuildhub.model.post;
 
 public class PostModel {
     private String title;

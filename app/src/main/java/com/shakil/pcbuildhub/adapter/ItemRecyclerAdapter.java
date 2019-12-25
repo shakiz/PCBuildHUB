@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.shakil.pcbuildhub.R;
-import com.shakil.pcbuildhub.model.ItemModel;
+import com.shakil.pcbuildhub.model.dashboard.ItemModel;
 import java.util.ArrayList;
 
 public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapter.ViewHolder> {

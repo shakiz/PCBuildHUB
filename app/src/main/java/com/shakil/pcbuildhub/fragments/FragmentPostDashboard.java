@@ -2,17 +2,15 @@ package com.shakil.pcbuildhub.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.DashboardPostAdapter;
-import com.shakil.pcbuildhub.model.PostModel;
+import com.shakil.pcbuildhub.model.post.PostModel;
 import java.util.ArrayList;
 
 public class FragmentPostDashboard extends Fragment {
