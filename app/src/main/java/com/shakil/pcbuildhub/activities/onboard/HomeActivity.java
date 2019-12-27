@@ -16,8 +16,8 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.shakil.pcbuildhub.R;
-import com.shakil.pcbuildhub.activities.addconfig.AddNewPostActivity;
-import com.shakil.pcbuildhub.activities.buildyourpc.BuildYourPcActivity;
+import com.shakil.pcbuildhub.activities.addnewpost.AddNewPostActivity;
+import com.shakil.pcbuildhub.activities.buildyourpc.BuildYourPcListActivity;
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
 import com.shakil.pcbuildhub.drawerextra.SimpleItem;
@@ -99,7 +99,7 @@ public class HomeActivity extends AppCompatActivity {
                             return;
                         }
                         else if (pos == POS_BUILD_YOUR_PC){
-                            startActivity(new Intent(HomeActivity.this, BuildYourPcActivity.class));
+                            startActivity(new Intent(HomeActivity.this, BuildYourPcListActivity.class));
                             return;
                         }
                     }

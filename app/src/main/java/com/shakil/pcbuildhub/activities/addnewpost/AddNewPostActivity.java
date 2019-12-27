@@ -1,4 +1,4 @@
-package com.shakil.pcbuildhub.activities.addconfig;
+package com.shakil.pcbuildhub.activities.addnewpost;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

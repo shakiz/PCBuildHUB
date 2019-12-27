@@ -17,7 +17,7 @@
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".activities.addconfig.AddNewPostActivity"
+            android:name=".activities.addnewpost.AddNewPostActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"
             android:windowSoftInputMode="adjustNothing" />
