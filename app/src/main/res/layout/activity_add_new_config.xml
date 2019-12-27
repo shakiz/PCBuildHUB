@@ -212,7 +212,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -287,7 +287,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -362,7 +362,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -437,7 +437,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -512,7 +512,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -587,7 +587,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -662,7 +662,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -737,7 +737,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -812,7 +812,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -887,7 +887,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -962,7 +962,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -1037,7 +1037,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -1112,7 +1112,7 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -1182,12 +1182,11 @@
                                 android:textColor="@color/md_grey_800"
                                 android:text="@string/dummyString"/>
 
-
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
-                            android:background="@color/md_grey_400"
+                            android:background="@color/commonColor"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="4dp"
@@ -1197,7 +1196,6 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
