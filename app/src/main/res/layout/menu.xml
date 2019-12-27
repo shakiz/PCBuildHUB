@@ -51,7 +51,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/nav_list_item"
-            android:layout_width="160dp"
+            android:layout_width="wrap_content"
             android:clickable="true"
             tools:listitem="@layout/item_option"
             android:layout_height="wrap_content" />

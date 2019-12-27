@@ -22,7 +22,7 @@
                 android:id="@+id/tool_bar"
                 app:navigationIcon="?attr/homeAsUpIndicator"
                 style="@style/TextAppearance.Widget.Event.Toolbar.Title"
-                app:title="@string/add_new_config"
+                app:title="@string/add_new_post"
                 app:titleTextColor="@color/white_transparent">
 
             </androidx.appcompat.widget.Toolbar>

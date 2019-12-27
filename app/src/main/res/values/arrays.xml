@@ -4,7 +4,7 @@
     <string-array name="ld_activityScreenTitles">
         <item>Home</item>
         <item>Profile</item>
-        <item>Add Config</item>
+        <item>Add New Post</item>
         <item>Build Your PC</item>
         <item>About US</item>
         <item>Log Out</item>

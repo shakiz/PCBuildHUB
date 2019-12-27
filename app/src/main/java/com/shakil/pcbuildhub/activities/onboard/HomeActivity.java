@@ -16,7 +16,7 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.shakil.pcbuildhub.R;
-import com.shakil.pcbuildhub.activities.addconfig.AddNewConfigActivity;
+import com.shakil.pcbuildhub.activities.addconfig.AddNewPostActivity;
 import com.shakil.pcbuildhub.activities.buildyourpc.BuildYourPcActivity;
 import com.shakil.pcbuildhub.drawerextra.DrawerAdapter;
 import com.shakil.pcbuildhub.drawerextra.DrawerItem;
@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private static final int POS_POST = 0;
     private static final int POS_PROFILE = 1;
-    private static final int POS_ADD_CONFIG = 2;
+    private static final int POS_ADD_NEW_POST = 2;
     private static final int POS_BUILD_YOUR_PC = 3;
     private static final int POS_ABOUT_US = 4;
     private static final int POS_LOGOUT = 5;
@@ -94,8 +94,8 @@ public class HomeActivity extends AppCompatActivity {
                             showFragment(FragmentPostDashboard.getInstance());
                             return;
                         }
-                        else if (pos == POS_ADD_CONFIG){
-                            startActivity(new Intent(HomeActivity.this, AddNewConfigActivity.class));
+                        else if (pos == POS_ADD_NEW_POST){
+                            startActivity(new Intent(HomeActivity.this, AddNewPostActivity.class));
                             return;
                         }
                         else if (pos == POS_BUILD_YOUR_PC){
@@ -119,7 +119,7 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_POST).setChecked(true),
                 createItemFor(POS_PROFILE),
-                createItemFor(POS_ADD_CONFIG),
+                createItemFor(POS_ADD_NEW_POST),
                 createItemFor(POS_BUILD_YOUR_PC),
                 createItemFor(POS_ABOUT_US),
                 new SpaceItem(32),

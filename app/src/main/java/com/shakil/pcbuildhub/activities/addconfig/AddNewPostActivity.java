@@ -24,7 +24,7 @@ import com.shakil.pcbuildhub.utils.UxDataAdapter;
 
 import java.util.ArrayList;
 
-public class AddNewConfigActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddNewPostActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Toolbar toolbar;
     private ItemRecyclerAdapter itemRecyclerAdapter;
@@ -49,7 +49,7 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddNewConfigActivity.this, HomeActivity.class));
+                startActivity(new Intent(AddNewPostActivity.this, HomeActivity.class));
             }
         });
 
@@ -205,6 +205,6 @@ public class AddNewConfigActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(AddNewConfigActivity.this, HomeActivity.class));
+        startActivity(new Intent(AddNewPostActivity.this, HomeActivity.class));
     }
 }
