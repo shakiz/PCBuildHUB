@@ -1,25 +1,29 @@
 package com.shakil.pcbuildhub.activities.buildyourpc;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.shakil.pcbuildhub.R;
-import com.shakil.pcbuildhub.activities.onboard.HomeActivity;
+import com.shakil.pcbuildhub.databinding.ActivityBuildYourPcBinding;
 
 public class BuildYourPcActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
 
+    private ActivityBuildYourPcBinding buildYourPcBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_build_your_pc);
-        init();
-        setSupportActionBar(toolbar);
+        buildYourPcBinding = DataBindingUtil.setContentView(this , R.layout.activity_build_your_pc);
+        setSupportActionBar(buildYourPcBinding.toolBar);
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        init();
+        bindUIWithComponents();
+    }
+
+    private void bindUIWithComponents() {
+        buildYourPcBinding.toolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(BuildYourPcActivity.this, BuildYourPcListActivity.class));
@@ -28,6 +32,6 @@ public class BuildYourPcActivity extends AppCompatActivity {
     }
 
     private void init() {
-        toolbar = findViewById(R.id.tool_bar);
+        
     }
 }

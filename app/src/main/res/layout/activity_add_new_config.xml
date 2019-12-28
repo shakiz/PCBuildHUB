@@ -53,47 +53,48 @@
                     android:translationZ="4dp">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="387dp"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_margin="2dp">
+                        android:layout_margin="2dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
-                            android:weightSum="1"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:weightSum="1">
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight=".4"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="8dp"
                                 android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight=".4"
                                 android:gravity="center|left"
+                                android:text="@string/title"
                                 android:textColor="@color/md_blue_grey_800"
-                                android:textSize="14sp"
-                                android:text="@string/title"/>
+                                android:textSize="14sp" />
+
                             <EditText
                                 android:id="@+id/title"
                                 android:layout_width="0dp"
-                                android:layout_weight=".6"
                                 android:layout_height="40dp"
                                 android:layout_margin="5dp"
+                                android:layout_weight=".6"
                                 android:background="@drawable/rectangle_background"
-                                android:inputType="text"
                                 android:ellipsize="end"
-                                android:scrollHorizontally="true"
-                                android:maxLines="1"
                                 android:gravity="center"
-                                android:textColorHint="@color/md_grey_700"
                                 android:hint="@string/title_hint"
+                                android:inputType="text"
+                                android:maxLines="1"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
-                                android:textSize="14sp"
-                                android:textColor="@color/md_grey_800"/>
+                                android:scrollHorizontally="true"
+                                android:textColor="@color/md_grey_800"
+                                android:textColorHint="@color/md_grey_700"
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -101,28 +102,28 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
-                            android:weightSum="1"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:weightSum="1">
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight=".4"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="8dp"
                                 android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight=".4"
                                 android:gravity="center|left"
+                                android:text="@string/category"
                                 android:textColor="@color/md_blue_grey_800"
-                                android:textSize="14sp"
-                                android:text="@string/category"/>
+                                android:textSize="14sp" />
 
                             <Spinner
+                                android:id="@+id/Category"
                                 style="@style/Base.TextAppearance.AppCompat.Medium"
                                 android:layout_width="0dp"
-                                android:layout_weight=".6"
                                 android:layout_height="40dp"
                                 android:layout_margin="5dp"
-                                android:background="@drawable/rectangle_background"
-                                android:id="@+id/Category"></Spinner>
+                                android:layout_weight=".6"
+                                android:background="@drawable/rectangle_background"></Spinner>
 
                         </LinearLayout>
 
