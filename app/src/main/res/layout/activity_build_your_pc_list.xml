@@ -9,11 +9,28 @@
         android:layout_height="match_parent"
         android:background="@color/md_white_1000"
         android:focusable="true"
-        android:focusableInTouchMode="true"
-        tools:context=".activities.buildyourpc.BuildYourPcListActivity">
+        android:focusableInTouchMode="true">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/app_bar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tool_bar"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                style="@style/TextAppearance.Widget.Event.Toolbar.Title"
+                app:title="@string/build_your_pc_list"
+                app:titleTextColor="@color/white_transparent">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
+            android:layout_below="@id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/mainLayout"
@@ -27,6 +44,22 @@
                 android:layout_margin="4dp"/>
 
         </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addBuild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            app:fabSize="normal"
+            android:background="@drawable/fab_back"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="12dp"
+            app:backgroundTint="@android:color/white"
+            app:rippleColor="@color/md_grey_400"
+            app:borderWidth="0dp"
+            app:elevation="2dp"
+            app:pressedTranslationZ="12dp"/>
 
     </RelativeLayout>
 

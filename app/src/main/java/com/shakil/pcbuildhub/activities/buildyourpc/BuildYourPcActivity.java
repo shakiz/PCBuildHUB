@@ -22,7 +22,7 @@ public class BuildYourPcActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(BuildYourPcActivity.this, HomeActivity.class));
+                startActivity(new Intent(BuildYourPcActivity.this, BuildYourPcListActivity.class));
             }
         });
     }
