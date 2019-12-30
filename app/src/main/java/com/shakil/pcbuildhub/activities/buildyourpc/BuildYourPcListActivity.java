@@ -3,19 +3,15 @@ package com.shakil.pcbuildhub.activities.buildyourpc;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.shakil.pcbuildhub.R;
-import com.shakil.pcbuildhub.activities.addnewpost.AddNewPostActivity;
 import com.shakil.pcbuildhub.activities.onboard.HomeActivity;
 import com.shakil.pcbuildhub.adapter.BuildYourPcAdapter;
 import com.shakil.pcbuildhub.databinding.ActivityBuildYourPcListBinding;
 import com.shakil.pcbuildhub.model.buildyourpc.BuildYourPc;
-
 import java.util.ArrayList;
 
 public class BuildYourPcListActivity extends AppCompatActivity {
@@ -49,7 +45,7 @@ public class BuildYourPcListActivity extends AppCompatActivity {
         buildYourPcListBinding.addBuild.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BuildYourPcListActivity.this,BuildYourPcActivity.class));
+                startActivity(new Intent(BuildYourPcListActivity.this,BuildYourOwnPcActivity.class));
             }
         });
     }
@@ -72,5 +68,10 @@ public class BuildYourPcListActivity extends AppCompatActivity {
         buildYourPcList.add(new BuildYourPc("Sample Title 2","2019-10-16","Production",10000));
         buildYourPcList.add(new BuildYourPc("Sample Title 3","2016-10-18","Streaming",60000));
         return buildYourPcList;
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(BuildYourPcListActivity.this , HomeActivity.class));
     }
 }
