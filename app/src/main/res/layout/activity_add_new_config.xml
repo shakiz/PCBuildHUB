@@ -29,9 +29,101 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/titleCategoryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            android:elevation="8dp"
+            android:layout_below="@id/app_bar"
+            android:layout_margin="8dp"
+            android:translationZ="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight=".4"
+                        android:gravity="center|left"
+                        android:text="@string/title"
+                        android:textColor="@color/md_blue_grey_800"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight=".6"
+                        android:background="@drawable/rectangle_background"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:hint="@string/title_hint"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:scrollHorizontally="true"
+                        android:textColor="@color/md_grey_800"
+                        android:textColorHint="@color/md_grey_700"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight=".4"
+                        android:gravity="center|left"
+                        android:textColor="@color/md_blue_grey_800"
+                        android:textSize="14sp"
+                        android:text="@string/category"/>
+
+                    <Spinner
+                        android:id="@+id/Category"
+                        style="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight=".6"
+                        android:background="@drawable/rectangle_background"></Spinner>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
-            android:layout_below="@id/app_bar"
+            android:layout_below="@id/titleCategoryLayout"
             android:layout_above="@id/totalLayout"
             android:layout_width="match_parent"
             android:layout_height="fill_parent">
@@ -42,94 +134,6 @@
                 android:id="@+id/mainLayout"
                 android:layout_gravity=""
                 android:orientation="vertical">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="12dp"
-                    android:elevation="8dp"
-                    android:layout_margin="8dp"
-                    android:translationZ="4dp">
-
-                    <LinearLayout
-                        android:layout_width="387dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="2dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:layout_marginRight="4dp"
-                            android:orientation="horizontal"
-                            android:weightSum="1">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="8dp"
-                                android:layout_weight=".4"
-                                android:gravity="center|left"
-                                android:text="@string/title"
-                                android:textColor="@color/md_blue_grey_800"
-                                android:textSize="14sp" />
-
-                            <EditText
-                                android:id="@+id/title"
-                                android:layout_width="0dp"
-                                android:layout_height="40dp"
-                                android:layout_margin="5dp"
-                                android:layout_weight=".6"
-                                android:background="@drawable/rectangle_background"
-                                android:ellipsize="end"
-                                android:gravity="center"
-                                android:hint="@string/title_hint"
-                                android:inputType="text"
-                                android:maxLines="1"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:scrollHorizontally="true"
-                                android:textColor="@color/md_grey_800"
-                                android:textColorHint="@color/md_grey_700"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:layout_marginRight="4dp"
-                            android:orientation="horizontal"
-                            android:weightSum="1">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="8dp"
-                                android:layout_weight=".4"
-                                android:gravity="center|left"
-                                android:text="@string/category"
-                                android:textColor="@color/md_blue_grey_800"
-                                android:textSize="14sp" />
-
-                            <Spinner
-                                android:id="@+id/Category"
-                                style="@style/Base.TextAppearance.AppCompat.Medium"
-                                android:layout_width="0dp"
-                                android:layout_height="40dp"
-                                android:layout_margin="5dp"
-                                android:layout_weight=".6"
-                                android:background="@drawable/rectangle_background"></Spinner>
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -165,7 +169,7 @@
                                     android:layout_weight=".4"
                                     android:layout_height="match_parent"
                                     android:layout_marginLeft="8dp"
-                                    android:layout_gravity="center"
+                                    android:layout_gravity="center|left"
                                     android:gravity="center|left"
                                     android:textColor="@color/md_blue_grey_800"
                                     android:textSize="14sp"
@@ -642,21 +646,21 @@
 
                             <TextView
                                 android:id="@+id/GraphicsCard"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:ellipsize="end"
-                                android:maxLines="2"
-                                android:layout_marginLeft="8dp"
-                                android:layout_marginRight="8dp"
-                                android:layout_marginTop="4dp"
-                                android:layout_marginBottom="8dp"
                                 android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:ellipsize="end"
                                 android:gravity="center"
-                                android:textStyle="bold"
-                                android:visibility="gone"
+                                android:maxLines="2"
+                                android:text="@string/dummyString"
                                 android:textColor="@color/md_grey_800"
-                                android:text="@string/dummyString"/>
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
 
 
                         </LinearLayout>
@@ -1216,46 +1220,45 @@
             <TextView
                 android:id="@+id/TotalAmount"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:padding="12dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/rounded_layout"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@color/md_white_1000"
                 android:text="@string/total"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/saveConfig"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginRight="8dp"
                 android:layout_margin="4dp"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:src="@drawable/ic_action_add"
                 android:background="@drawable/transparent_ripple"
                 android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 app:backgroundTint="@color/md_white_1000"
                 app:fabSize="auto" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/refreshConfig"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_margin="4dp"
                 android:layout_toRightOf="@id/saveConfig"
                 android:background="@drawable/transparent_ripple"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:src="@drawable/ic_refresh"
                 android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 app:backgroundTint="@color/md_white_1000"
                 app:fabSize="auto" />
 
         </LinearLayout>
-
-
-
 
     </RelativeLayout>
 

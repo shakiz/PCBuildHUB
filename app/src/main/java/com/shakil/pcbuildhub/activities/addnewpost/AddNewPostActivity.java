@@ -20,8 +20,7 @@ import com.shakil.pcbuildhub.adapter.ItemRecyclerAdapter;
 import com.shakil.pcbuildhub.databinding.ActivityAddNewConfigBinding;
 import com.shakil.pcbuildhub.model.dashboard.ItemModel;
 import com.shakil.pcbuildhub.utils.DumpDummyData;
-import com.shakil.pcbuildhub.utils.UxDataAdapter;
-
+import com.shakil.pcbuildhub.utils.Ux;
 import java.util.ArrayList;
 
 public class AddNewPostActivity extends AppCompatActivity implements View.OnClickListener{
@@ -36,7 +35,7 @@ public class AddNewPostActivity extends AppCompatActivity implements View.OnClic
     private int TotalAmount = 0;
     private ActivityAddNewConfigBinding newConfigBinding;
     private DumpDummyData dumpDummyData;
-    private UxDataAdapter uxDataAdapter;
+    private Ux ux;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +57,7 @@ public class AddNewPostActivity extends AppCompatActivity implements View.OnClic
 
     private void init() {
         toolbar = findViewById(R.id.tool_bar);
-        uxDataAdapter = new UxDataAdapter(this);
+        ux = new Ux(this);
     }
 
     private void customViewInit(Dialog itemDialog) {
@@ -87,7 +86,7 @@ public class AddNewPostActivity extends AppCompatActivity implements View.OnClic
         newConfigBinding.parentContainer.startAnimation(a);
 
         //region set spinnerAdapter start
-        uxDataAdapter.setSpinnerAdapter(newConfigBinding.Category,new String[]{"Gaming","Production","Streaming"});
+        ux.setSpinnerAdapter(newConfigBinding.Category,new String[]{"Gaming","Production","Streaming"});
         //region spinnerAdapter end
 
         newConfigBinding.cpuButton.setOnClickListener(this);
@@ -185,12 +184,12 @@ public class AddNewPostActivity extends AppCompatActivity implements View.OnClic
     private void clearUI() {
         int[] configTextResIds = new int[]{R.id.Cpu,R.id.Motherboard,R.id.RAM1,R.id.RAM2, R.id.Storage1,R.id.Storage2,R.id.GraphicsCard,R.id.PowerSupply,R.id.Casing,R.id.Monitor,
                     R.id.Keyboard,R.id.Mouse,R.id.OperatingSystem,R.id.UPS};
-        for (int resId : configTextResIds){
-            TextView textView = findViewById(resId);
-            textView.setText("");
-            textView.setVisibility(View.GONE);
-        }
+        ux.clearUI(configTextResIds,getWindow().getDecorView());
+        newConfigBinding.title.setText("");
         newConfigBinding.TotalAmount.setText("Total here");
+        //region set spinnerAdapter start
+        ux.setSpinnerAdapter(newConfigBinding.Category,new String[]{"Gaming","Production","Streaming"});
+        //region spinnerAdapter end
     }
 
     private void showDialog() {
