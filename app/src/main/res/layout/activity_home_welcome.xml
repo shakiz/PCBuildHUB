@@ -76,7 +76,7 @@
                     android:text="@string/sign_up"
                     android:textSize="32sp"
                     android:textStyle="bold"
-                    android:textColor="@color/md_blue_grey_800"
+                    android:textColor="@color/md_grey_800"
                     android:layout_gravity="center"
                     android:gravity="center"/>
 
@@ -86,6 +86,7 @@
                     android:text="@string/Easier_sign_up"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:textColor="@color/md_grey_800"
                     android:textSize="18sp"/>
 
             </LinearLayout>
@@ -123,7 +124,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_margin="4dp"
-                    android:textColor="@color/md_blue_grey_800"/>
+                    android:textColor="@color/md_grey_800"/>
 
                 <Button
                     android:id="@+id/startWithEmail"
@@ -149,6 +150,7 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:weightSum="1"
                 android:layout_weight="1">
@@ -161,8 +163,9 @@
                     android:layout_gravity="center|right"
                     android:gravity="center|right"
                     android:clickable="false"
+                    android:textColor="@color/md_grey_800"
                     android:text="@string/already_have_account"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -178,7 +181,7 @@
                     android:clickable="true"
                     android:textStyle="bold"
                     android:text="@string/login"
-                    android:textSize="18sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 

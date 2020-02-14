@@ -11,12 +11,12 @@
     </string-array>
 
     <array name="ld_activityScreenIcons">
-        <item>@drawable/homeicon</item>
-        <item>@drawable/man</item>
-        <item>@drawable/add</item>
-        <item>@drawable/idea</item>
-        <item>@drawable/question</item>
-        <item>@drawable/logout</item>
+        <item>@drawable/ic_home</item>
+        <item>@drawable/ic_man</item>
+        <item>@drawable/ic_add</item>
+        <item>@drawable/ic_build</item>
+        <item>@drawable/ic_about</item>
+        <item>@drawable/ic_logout</item>
     </array>
 
 </resources>

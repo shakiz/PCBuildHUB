@@ -22,7 +22,7 @@ public class Ux {
         spinnerAdapter.notifyDataSetChanged();
     }
 
-    public void clearUI(int[] resIds,View view){
+    public void clearDetailsUI(int[] resIds,View view){
         for (int resId : resIds){
             TextView textView = view.findViewById(resId);
             textView.setText("");

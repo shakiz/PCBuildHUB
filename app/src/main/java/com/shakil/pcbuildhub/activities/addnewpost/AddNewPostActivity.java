@@ -184,7 +184,7 @@ public class AddNewPostActivity extends AppCompatActivity implements View.OnClic
     private void clearUI() {
         int[] configTextResIds = new int[]{R.id.Cpu,R.id.Motherboard,R.id.RAM1,R.id.RAM2, R.id.Storage1,R.id.Storage2,R.id.GraphicsCard,R.id.PowerSupply,R.id.Casing,R.id.Monitor,
                     R.id.Keyboard,R.id.Mouse,R.id.OperatingSystem,R.id.UPS};
-        ux.clearUI(configTextResIds,getWindow().getDecorView());
+        ux.clearDetailsUI(configTextResIds,getWindow().getDecorView());
         newConfigBinding.title.setText("");
         newConfigBinding.TotalAmount.setText("Total here");
         //region set spinnerAdapter start

@@ -29,7 +29,7 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/user"/>
+                    android:src="@drawable/ic_user"/>
 
             </com.github.florent37.shapeofview.shapes.CircleView>
 
