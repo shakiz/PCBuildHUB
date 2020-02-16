@@ -39,9 +39,7 @@ public class StartWithEmailActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 showCustomDialog();
-
             }
         });
     }

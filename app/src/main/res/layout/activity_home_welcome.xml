@@ -103,7 +103,7 @@
                 <Button
                     android:id="@+id/startWithMobile"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="4dp"
@@ -129,7 +129,7 @@
                 <Button
                     android:id="@+id/startWithEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="4dp"
@@ -165,7 +165,7 @@
                     android:clickable="false"
                     android:textColor="@color/md_grey_800"
                     android:text="@string/already_have_account"
-                    android:textSize="16sp"/>
+                    android:textSize="14sp"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -175,13 +175,13 @@
                     android:layout_marginLeft="4dp"
                     android:layout_gravity="center|left"
                     android:id="@+id/login"
-                    android:gravity="center|left"
+                    android:gravity="center"
                     android:textColor="@color/commonColor"
                     android:foreground="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:textStyle="bold"
                     android:text="@string/login"
-                    android:textSize="16sp"/>
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 

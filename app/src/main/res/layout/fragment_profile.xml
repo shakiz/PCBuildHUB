@@ -26,6 +26,7 @@
                 app:cardBackgroundColor="@color/md_white_1000"
                 app:cardCornerRadius="16dp"
                 app:cardUseCompatPadding="true"
+                android:translationZ="6dp"
                 app:elevation="16dp">
 
                 <!--Profile image , location and total earning part-->
@@ -207,6 +208,7 @@
                     app:cardCornerRadius="10dp"
                     app:cardBackgroundColor="@color/commonColorCard"
                     android:elevation="4dp"
+                    app:cardUseCompatPadding="true"
                     android:id="@+id/postCardView2">
 
                     <LinearLayout
@@ -318,7 +320,7 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="right"
                                     android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_heart_white"/>
+                                    android:src="@drawable/ic_heart_black"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -342,7 +344,7 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="right"
                                     android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_share_white"/>
+                                    android:src="@drawable/ic_share_black"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -367,6 +369,7 @@
                     app:cardCornerRadius="10dp"
                     app:cardBackgroundColor="@color/commonColorCard"
                     android:elevation="4dp"
+                    app:cardUseCompatPadding="true"
                     android:id="@+id/postCardView1">
 
                     <LinearLayout
@@ -478,7 +481,7 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="right"
                                     android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_heart_white"/>
+                                    android:src="@drawable/ic_heart_black"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -502,7 +505,7 @@
                                     android:layout_height="20dp"
                                     android:layout_gravity="right"
                                     android:layout_marginRight="4dp"
-                                    android:src="@drawable/ic_share_white"/>
+                                    android:src="@drawable/ic_share_black"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
