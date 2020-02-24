@@ -15,36 +15,23 @@
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
             android:paddingBottom="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/mainLayout"
+                android:weightSum="2"
                 android:orientation="vertical">
 
-                <!--        <androidx.cardview.widget.CardView-->
-                <!--            android:layout_width="match_parent"-->
-                <!--            android:layout_height="match_parent"-->
-                <!--            app:cardCornerRadius="12dp"-->
-                <!--            android:elevation="4dp"-->
-                <!--            android:layout_margin="8dp"-->
-                <!--            android:translationZ="4dp">-->
-
-                <!--            <LinearLayout-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="match_parent"-->
-                <!--                android:orientation="vertical"-->
-                <!--                android:layout_margin="2dp">-->
-                <!--            </LinearLayout>-->
-                <!--        </androidx.cardview.widget.CardView>-->
-
                 <LinearLayout
+                    android:id="@+id/arcViewContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp"
+                    android:layout_height="0dp"
+                    android:layout_weight=".6"
                     android:orientation="vertical">
-
 
                     <!--arcView for customized view-->
                     <com.github.florent37.shapeofview.shapes.ArcView
@@ -90,20 +77,18 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.4"
                     android:layout_margin="4dp"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:weightSum="2.5"
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/emailAddressLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="false"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:id="@+id/emaiLAddressLayout"
                         android:layout_marginTop="16dp"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp">
@@ -150,10 +135,10 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:layout_below="@id/emailAddressLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="false"
-                        android:id="@+id/passwordLayout"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:layout_marginTop="16dp"
@@ -202,6 +187,7 @@
                     </RelativeLayout>
 
                     <LinearLayout
+                        android:id="@+id/rememberMeLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -251,14 +237,6 @@
                             android:textSize="14sp"/>
                     </LinearLayout>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:orientation="vertical">
-
                     <Button
                         android:id="@+id/Login"
                         android:layout_width="200dp"
@@ -275,7 +253,25 @@
                         android:textSize="18sp"
                         android:background="@drawable/button_shape_round_corner"/>
 
+                    <Button
+                        android:id="@+id/Register"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_margin="4dp"
+                        android:text="@string/register_yourself"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:textColor="@color/commonColor"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"
+                        android:background="@color/transparent"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
                 </LinearLayout>
+
 
             </LinearLayout>
 

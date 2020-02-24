@@ -139,7 +139,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(HomeActivity.this, StartWithMobileActivity.class));
+        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
         overridePendingTransition(R.anim.fadein,R.anim.push_up_out);
     }
 
