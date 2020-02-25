@@ -1,15 +1,66 @@
 package com.shakil.pcbuildhub.utils;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.model.dashboard.ItemModel;
+import com.shakil.pcbuildhub.model.post.PostModel;
 import java.util.ArrayList;
 
 public class DumpDummyData {
     private Context context;
+    private Ux ux;
+    private ArrayList<PostModel> postList;
 
     public DumpDummyData(Context context) {
         this.context = context;
+        ux = new Ux(context);
+        postList = new ArrayList<>();
+    }
+
+    private onNewFeedComplete onNewFeedComplete;
+
+    public interface onNewFeedComplete{
+        void onComplete();
+    }
+
+    public void newsFeed(onNewFeedComplete onNewFeedComplete){
+        this.onNewFeedComplete = onNewFeedComplete;
+        new BackgroundNewsFeed().execute();
+    }
+
+    private class BackgroundNewsFeed extends AsyncTask<String ,Void, ArrayList<PostModel>> {
+
+        @Override
+        protected void onPreExecute() {
+            ux.getLoadingView();
+        }
+
+        @Override
+        protected ArrayList<PostModel> doInBackground(String... strings) {
+            return setData();
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<PostModel> newPostModels) {
+            if(onNewFeedComplete != null) {
+                setPostList(newPostModels);
+                onNewFeedComplete.onComplete();
+                ux.removeLoadingView();
+            }
+        }
+    }
+
+    private ArrayList<PostModel> setData() {
+        ArrayList<PostModel> postModelList = new ArrayList<>();
+        postModelList.add(new PostModel("Great AMD Gaming/Streaming Build","Shakil","10-10-2019"));
+        postModelList.add(new PostModel("Enthusiast AMD Gaming/Streaming Build","Zas","10-10-2019"));
+        postModelList.add(new PostModel("Magnificent Intel Gaming/Streaming Build","David","10-10-2019"));
+        postModelList.add(new PostModel("Entry Level AMD Gaming Build","Saim","10-10-2019"));
+        postModelList.add(new PostModel("Modest AMD Gaming Build","Koushik","10-10-2019"));
+        postModelList.add(new PostModel("Portable LAN Build","Robi","10-10-2019"));
+        postModelList.add(new PostModel("Budget Home/Office Build","Shawon","10-10-2019"));
+        return postModelList;
     }
 
     public ArrayList<ItemModel> setData(int contextId) {
@@ -82,5 +133,13 @@ public class DumpDummyData {
                 break;
         }
         return list;
+    }
+
+    public ArrayList<PostModel> getPostList() {
+        return postList;
+    }
+
+    public void setPostList(ArrayList<PostModel> postList) {
+        this.postList = postList;
     }
 }

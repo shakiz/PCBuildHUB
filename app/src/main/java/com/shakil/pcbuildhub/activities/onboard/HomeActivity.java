@@ -12,9 +12,8 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
-
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.activities.addnewpost.AddNewPostActivity;
 import com.shakil.pcbuildhub.activities.buildyourpc.BuildYourPcListActivity;
@@ -24,25 +23,23 @@ import com.shakil.pcbuildhub.drawerextra.SimpleItem;
 import com.shakil.pcbuildhub.drawerextra.SpaceItem;
 import com.shakil.pcbuildhub.fragments.FragmentPostDashboard;
 import com.shakil.pcbuildhub.fragments.FragmentProfile;
+import com.shakil.pcbuildhub.utils.UtilsForAll;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 import java.util.Arrays;
 
 public class HomeActivity extends AppCompatActivity {
-
+    private static final String TAG = "Shakil-HomeActivity";
     private SlidingRootNav slidingRootNav ;
     private Toolbar toolbar;
     private RecyclerView list;
     private DrawerAdapter adapter;
-    private LinearLayout linearLayout;
-
     private static final int POS_POST = 0;
     private static final int POS_PROFILE = 1;
     private static final int POS_ADD_NEW_POST = 2;
     private static final int POS_BUILD_YOUR_PC = 3;
     private static final int POS_ABOUT_US = 4;
     private static final int POS_LOGOUT = 5;
-
     private String[] screenTitles;
     private Drawable[] screenIcons;
 
@@ -53,12 +50,10 @@ public class HomeActivity extends AppCompatActivity {
 
         init(savedInstanceState);
         bindUIWithComponents();
-
     }
 
     private void init(Bundle savedInstanceState){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        linearLayout = findViewById(R.id.activity_main);
         toolbar.setTitle(R.string.home);
         slidingRootNav  = new SlidingRootNavBuilder(this)
                 .withToolbarMenuToggle(toolbar)
@@ -139,8 +134,15 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-        overridePendingTransition(R.anim.fadein,R.anim.push_up_out);
+
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0){
+            Log.i(TAG, "Popping back stack fragments");
+            getSupportFragmentManager().popBackStack();
+        }
+        else {
+            Log.i(TAG, "Nothing on back stack, exiting app");
+            UtilsForAll.exitApp(this);
+        }
     }
 
     private void showFragment(Fragment fragment) {

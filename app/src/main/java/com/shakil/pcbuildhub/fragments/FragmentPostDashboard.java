@@ -2,6 +2,8 @@ package com.shakil.pcbuildhub.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,15 +13,17 @@ import android.view.ViewGroup;
 import com.shakil.pcbuildhub.R;
 import com.shakil.pcbuildhub.adapter.DashboardPostAdapter;
 import com.shakil.pcbuildhub.model.post.PostModel;
+import com.shakil.pcbuildhub.utils.DumpDummyData;
 import java.util.ArrayList;
 
 public class FragmentPostDashboard extends Fragment {
 
     private RecyclerView recyclerView;
-    private ArrayList<PostModel> postModelList;
+    private ArrayList<PostModel> postList;
     private DashboardPostAdapter postAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private Context context;
+    private DumpDummyData dumpDummyData;
 
     private static final FragmentPostDashboard FRAGMENT_POST_DASHBOARD = null;
 
@@ -42,34 +46,35 @@ public class FragmentPostDashboard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_post_dashboard, container, false);
+        return inflater.inflate(R.layout.fragment_post_dashboard, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         init(view);
-        return view;
     }
 
     private void init(View view) {
         recyclerView = view.findViewById(R.id.postRecyclerView);
-        postModelList = new ArrayList<>();
+        postList = new ArrayList<>();
+        dumpDummyData = new DumpDummyData(getContext());
         binUIWithComponents();
     }
 
     private void binUIWithComponents(){
-        setData();
-        setAdapter();
+
+        dumpDummyData.newsFeed(new DumpDummyData.onNewFeedComplete() {
+            @Override
+            public void onComplete() {
+                postList = dumpDummyData.getPostList();
+                setAdapter();
+            }
+        });
     }
 
-    private void setData() {
-        postModelList.add(new PostModel("Great AMD Gaming/Streaming Build","Shakil","10-10-2019"));
-        postModelList.add(new PostModel("Enthusiast AMD Gaming/Streaming Build","Zas","10-10-2019"));
-        postModelList.add(new PostModel("Magnificent Intel Gaming/Streaming Build","David","10-10-2019"));
-        postModelList.add(new PostModel("Entry Level AMD Gaming Build","Saim","10-10-2019"));
-        postModelList.add(new PostModel("Modest AMD Gaming Build","Koushik","10-10-2019"));
-        postModelList.add(new PostModel("Portable LAN Build","Robi","10-10-2019"));
-        postModelList.add(new PostModel("Budget Home/Office Build","Shawon","10-10-2019"));
-    }
 
     private void setAdapter() {
-        postAdapter = new DashboardPostAdapter(postModelList,context);
+        postAdapter = new DashboardPostAdapter(postList,context);
         layoutManager = new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(postAdapter);
