@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,7 +14,7 @@ import android.widget.LinearLayout;
 import com.roger.catloadinglibrary.CatLoadingView;
 import com.shakil.pcbuildhub.R;
 
-public class SignUpActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     private LinearLayout linearLayout;
     private Button SignUp;
@@ -52,13 +51,13 @@ public class SignUpActivity extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                startActivity(new Intent(SignUpActivity.this,HomeActivity.class));
+                startActivity(new Intent(RegisterActivity.this,HomeActivity.class));
             }
         }, 1400);
     }
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 }

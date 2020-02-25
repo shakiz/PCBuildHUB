@@ -87,4 +87,5 @@
     <string name="select_data">Select your option</string>
     <string name="build_your_pc_list">Build PC List</string>
     <string name="register_yourself">Register Yourself</string>
+    <string name="please_check_input">Please Check Your Input</string>
 </resources>

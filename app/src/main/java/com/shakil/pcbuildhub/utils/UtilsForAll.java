@@ -25,7 +25,7 @@ public class UtilsForAll {
         this.view = view;
     }
 
-    public void exitApp(){
+    public static void exitApp(Context context){
         Intent exitIntent = new Intent(Intent.ACTION_MAIN);
         exitIntent.addCategory(Intent.CATEGORY_HOME);
         exitIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
